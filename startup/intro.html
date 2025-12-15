@@ -1,105 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Startup Foundations — TechWealthGuide</title>
-<meta name="description" content="Learn startup fundamentals: problem selection, validation, execution, and building sustainable businesses.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Introduction - Tech Wealth Guide</title>
+    <meta name="description" content="Learn what a startup really is, finding problems worth solving, validating ideas cheaply, basic business models, and mistakes first-time founders make.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #ef4444;
+            --accent-color: #dc2626;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #ffffff;
+            --bg-gray: #f9fafb;
+            --bg-dark: #111827;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
 
-<link rel="stylesheet" href="/assets/style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1c2d'/%3E%3Cpath d='M28 60 L50 28 L72 60' stroke='%23ff8a3c' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M28 72 L50 40 L72 72' stroke='%234db1ff' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--bg-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--bg-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        .course-header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .course-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            max-width: 600px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 25%;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .lesson-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 992px) {
+            .lesson-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .lesson-content {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lesson-section {
+            margin-bottom: 40px;
+        }
+
+        .lesson-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .lesson-section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: var(--text-primary);
+        }
+
+        .lesson-section p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .lesson-section ul, .lesson-section ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .lesson-section li {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .sidebar {
+            background-color: var(--bg-gray);
+            padding: 25px;
+            border-radius: var(--radius);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .course-modules {
+            list-style: none;
+        }
+
+        .course-modules li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .course-modules a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-modules a:hover {
+            color: var(--primary-color);
+        }
+
+        .module-complete {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .lock-icon {
+            color: var(--text-secondary);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #b91c1c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-svg {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-light);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .course-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-svg">TWG</div>
+                <span>Tech Wealth Guide</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="/ai/intro.html">AI</a>
+                <a href="/crypto/intro.html">Crypto</a>
+                <a href="/investing/intro.html">Investing</a>
+                <a href="/startup/intro.html" style="color: var(--primary-color); font-weight: 600;">Startup</a>
+                <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <div class="nav">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <rect width="100" height="100" rx="22" fill="#11283f"/>
-        <path d="M28 60 L50 28 L72 60" stroke="#ff8a3c" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <path d="M28 72 L50 40 L72 72" stroke="#4db1ff" stroke-width="6" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>TechWealthGuide</span>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> &gt; 
+            <a href="/startup/intro.html">Startup Course</a> &gt; 
+            <span>Introduction to Startups</span>
+        </div>
     </div>
-  </div>
-</header>
 
-<div class="container">
+    <div class="container course-header">
+        <h1>Startup Introduction: From Idea to Execution</h1>
+        <p class="subtitle">Learn what a startup really is, finding problems worth solving, validating ideas cheaply, basic business models, and mistakes first-time founders make.</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <p>Progress: 1 of 4 lessons complete</p>
+    </div>
 
-  <h1>Startup Foundations</h1>
-  <p>This introduction teaches how real businesses are built — through problem-solving, execution, and disciplined learning.</p>
+    <div class="container lesson-container">
+        <div class="lesson-content">
+            <div class="lesson-section">
+                <h2>What a Startup Really Is</h2>
+                <p>A startup is a temporary organization designed to search for a repeatable and scalable business model. It's not just a small business - it's designed for rapid growth.</p>
+                
+                <h3>Key Characteristics:</h3>
+                <ul>
+                    <li><strong>Search for business model</strong> - Startups are searching, established companies are executing</li>
+                    <li><strong>Designed for scale</strong> - Potential to grow rapidly with minimal additional cost</li>
+                    <li><strong>High uncertainty</strong> - Operating in unknown territory with unproven assumptions</li>
+                    <li><strong>Temporary phase</strong> - Goal is to become a sustainable company or fail fast</li>
+                    <li><strong>Innovation focus</strong> - Creating new solutions or disrupting existing markets</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>1. What a Startup Actually Is</h2>
-    <p>
-      A startup is not a small business. It is a temporary organization designed to search for a repeatable and scalable business model.
-    </p>
-    <p>
-      The goal is learning before growth.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Finding Problems Worth Solving</h2>
+                
+                <h3>Where to Look for Problems:</h3>
+                <ul>
+                    <li><strong>Personal pain points</strong> - Problems you experience yourself</li>
+                    <li><strong>Industry experience</strong> - Problems you see in your current or past work</li>
+                    <li><strong>Niche communities</strong> - Forums, Reddit, specialized groups with specific needs</li>
+                    <li><strong>Emerging trends</strong> - New technologies creating new problems</li>
+                    <li><strong>Inefficiencies</strong> - Processes that are slow, expensive, or complicated</li>
+                </ul>
+                
+                <h3>Evaluating Problem Quality:</h3>
+                <ul>
+                    <li><strong>Is it painful?</strong> - Does it cause real frustration or cost?</li>
+                    <li><strong>Is it frequent?</strong> - Does it happen often?</li>
+                    <li><strong>Are people paying?</strong> - Will people pay to solve it?</li>
+                    <li><strong>Is it growing?</strong> - Is the problem becoming more common?</li>
+                    <li><strong>Can you solve it?</strong> - Do you have the skills/resources?</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>2. Choosing the Right Problem</h2>
-    <p>
-      Successful startups solve painful problems for specific users.
-      Ideas matter less than insight into real user needs.
-    </p>
-    <p>
-      A boring problem with urgency beats an exciting problem without demand.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Validating Ideas Cheaply</h2>
+                
+                <h3>Low-Cost Validation Methods:</h3>
+                <ul>
+                    <li><strong>Problem interviews</strong> - Talk to potential customers about their pain points</li>
+                    <li><strong>Solution interviews</strong> - Show mockups/sketches and get feedback</li>
+                    <li><strong>Landing page test</strong> - Create a simple page describing the solution</li>
+                    <li><strong>Email list building</strong> - See if people will sign up for more information</li>
+                    <li><strong>Pre-orders</strong> - Ask for commitments before building</li>
+                    <li><strong>Mock sales</strong> - Try to "sell" the product before it exists</li>
+                </ul>
+                
+                <h3>What to Validate:</h3>
+                <ul>
+                    <li><strong>Problem existence</strong> - Do people actually have this problem?</li>
+                    <li><strong>Solution appeal</strong> - Would they use your solution?</li>
+                    <li><strong>Willingness to pay</strong> - What would they pay for it?</li>
+                    <li><strong>Frequency of need</strong> - How often would they use it?</li>
+                    <li><strong>Competition</strong> - What alternatives exist?</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>3. Validation Before Building</h2>
-    <p>
-      Validation means confirming demand before heavy investment.
-      This can involve interviews, pre-orders, or small experiments.
-    </p>
-    <p>
-      Early feedback saves time and capital.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Basic Business Models</h2>
+                
+                <h3>Common Startup Business Models:</h3>
+                
+                <h4>1. Subscription (SaaS)</h4>
+                <ul>
+                    <li><strong>How it works:</strong> Customers pay monthly/annual fee</li>
+                    <li><strong>Examples:</strong> Netflix, Spotify, Slack</li>
+                    <li><strong>Best for:</strong> Services with ongoing value</li>
+                    <li><strong>Pros:</strong> Predictable revenue, customer loyalty</li>
+                    <li><strong>Cons:</strong> Churn management, constant value delivery needed</li>
+                </ul>
+                
+                <h4>2. Marketplace</h4>
+                <ul>
+                    <li><strong>How it works:</strong> Connect buyers and sellers, take commission</li>
+                    <li><strong>Examples:</strong> Airbnb, Uber, Etsy</li>
+                    <li><strong>Best for:</strong> Two-sided markets with fragmented supply/demand</li>
+                    <li><strong>Pros:</strong> Network effects, scalability</li>
+                    <li><strong>Cons:</strong> Chicken-and-egg problem, need both sides</li>
+                </ul>
+                
+                <h4>3. Freemium</h4>
+                <ul>
+                    <li><strong>How it works:</strong> Free basic version, paid premium features</li>
+                    <li><strong>Examples:</strong> Dropbox, Zoom, Canva</li>
+                    <li><strong>Best for:</strong> Products with viral potential</li>
+                    <li><strong>Pros:</strong> User acquisition, upselling opportunities</li>
+                    <li><strong>Cons:</strong> High free user support costs, conversion rates</li>
+                </ul>
+                
+                <h4>4. Transaction Fee</h4>
+                <ul>
+                    <li><strong>How it works:</strong> Take percentage of each transaction</li>
+                    <li><strong>Examples:</strong> PayPal, Shopify, Stripe</li>
+                    <li><strong>Best for:</strong> Payment processing, financial services</li>
+                    <li><strong>Pros:</strong> Revenue scales with customer success</li>
+                    <li><strong>Cons:</strong> Regulatory complexity, fraud risk</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>4. Execution and Iteration</h2>
-    <p>
-      Progress comes from building, measuring, and adjusting.
-      Speed matters, but direction matters more.
-    </p>
-    <p>
-      Startups succeed by learning faster than competitors.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Mistakes First-Time Founders Make</h2>
+                
+                <h3>1. Building Too Much Before Validating</h3>
+                <p><strong>Mistake:</strong> Spending months/years building without customer feedback<br>
+                <strong>Solution:</strong> Build minimum viable product (MVP) and iterate based on feedback</p>
+                
+                <h3>2. Solving a Non-Problem</h3>
+                <p><strong>Mistake:</strong> Building something people don't actually need<br>
+                <strong>Solution:</strong> Validate problem exists before building solution</p>
+                
+                <h3>3. Ignoring Business Model</h3>
+                <p><strong>Mistake:</strong> Focusing only on product, not how to make money<br>
+                <strong>Solution:</strong> Define business model from day one</p>
+                
+                <h3>4. Wrong Co-founder Choices</h3>
+                <p><strong>Mistake:</strong> Partnering with friends without complementary skills<br>
+                <strong>Solution:</strong> Choose co-founders based on needed skills, not friendship</p>
+                
+                <h3>5. Perfectionism</h3>
+                <p><strong>Mistake:</strong> Waiting for perfect product before launching<br>
+                <strong>Solution:</strong> Launch early, improve based on real feedback</p>
+                
+                <h3>6. Not Talking to Customers</h3>
+                <p><strong>Mistake:</strong> Assuming you know what customers want<br>
+                <strong>Solution:</strong> Regular customer interviews and feedback sessions</p>
+                
+                <h3>7. Running Out of Cash</h3>
+                <p><strong>Mistake:</strong> Spending too fast without revenue plan<br>
+                <strong>Solution:</strong> Conservative budgeting, multiple revenue scenarios</p>
+            </div>
 
-  <div class="card">
-    <h2>5. Risk and Sustainability</h2>
-    <p>
-      Most startups fail due to poor execution, not lack of ideas.
-      Managing burn rate and expectations increases survival odds.
-    </p>
-    <p>
-      Longevity creates optionality.
-    </p>
-  </div>
+            <!-- Affiliate/Ad Placeholder -->
+            <div style="background-color: var(--bg-gray); padding: 25px; border-radius: var(--radius); margin: 40px 0; text-align: center;">
+                <h3 style="margin-bottom: 15px;">Recommended Startup Tools</h3>
+                <p style="margin-bottom: 15px;">These are tools we recommend for validating and launching startups:</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Try Notion for Planning</a>
+                    <a href="#" style="background-color: var(--secondary-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Start with Bubble (No-code)</a>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary);">(Affiliate links - we earn a commission at no extra cost to you)</p>
+            </div>
 
-  <div class="section">
-    <a class="btn primary" href="/gate.html?gate=startup-advanced">Unlock Advanced Startup Lessons</a>
-    <a class="btn ghost" href="/index.html">Back to Home</a>
-  </div>
+            <!-- Call to Action -->
+            <div class="cta-box">
+                <h2>Ready for Advanced Startup Strategies?</h2>
+                <p>Unlock the full startup course including scaling strategies, monetization methods, marketing fundamentals, no-code tools, legal basics, and sustainable growth.</p>
+                <a href="#" class="btn-primary">Sign Up to Unlock Advanced Lessons</a>
+            </div>
+        </div>
 
-</div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Startup Course Modules</h3>
+            <ul class="course-modules">
+                <li>
+                    <a href="/startup/intro.html">
+                        <span>1. Startup Introduction</span>
+                        <span class="module-complete"><i class="fas fa-check-circle"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/startup/advanced.html">
+                        <span>2. Advanced Startup Strategies</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>3. Scaling Strategies</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>4. Monetization Methods</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>5. Marketing Fundamentals</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>6. No-code Tools</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+            </ul>
 
-<footer>
-  <p>
-    <a href="/legal/about.html">About</a> ·
-    <a href="/legal/privacy.html">Privacy</a> ·
-    <a href="/legal/terms.html">Terms</a>
-  </p>
-  <p>© TechWealthGuide</p>
-</footer>
+            <div style="margin-top: 30px; padding: 20px; background-color: white; border-radius: var(--radius);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Download Startup Validation Checklist</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-secondary);">Get our complete startup idea validation checklist as a PDF.</p>
+                <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 15px; border-radius: var(--radius); text-decoration: none; display: inline-block; font-size: 0.9rem;">
+                    <i class="fas fa-download"></i> Download (Free)
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="/" class="footer-logo">
+                        <div class="logo-svg">TWG</div>
+                        <span>Tech Wealth Guide</span>
+                    </a>
+                    <p style="color: #d1d5db; font-size: 0.95rem;">Professional education platform for AI, Crypto, Investing, and Startup wealth building.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Courses</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/ai/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">AI Fundamentals</a></li>
+                        <li><a href="/crypto/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Crypto Basics</a></li>
+                        <li><a href="/investing/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Investing 101</a></li>
+                        <li><a href="/startup/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Startup Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Legal</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/legal/privacy.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
+                        <li><a href="/legal/terms.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Financial Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Tech Wealth Guide. All rights reserved. This site provides educational content only, not financial advice.</p>
+                <p><a href="/legal/affiliate.html" style="color: #d1d5db; text-decoration: none;">Affiliate Disclosure</a> | <a href="/sitemap.xml" style="color: #d1d5db; text-decoration: none;">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
-</html>
+  </html>
