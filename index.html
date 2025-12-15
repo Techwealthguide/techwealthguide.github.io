@@ -5,240 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tech Wealth Guide</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <!-- Favicon (GitHub Pages safe) -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b0f19;
+      background: #0b1220;
       color: #ffffff;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
     }
 
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 24px;
-      background: #0f172a;
-      border-bottom: 1px solid #1e293b;
+      padding: 16px 20px;
+      border-bottom: 1px solid #1f2a44;
     }
 
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .logo img {
+    .brand img {
       height: 42px;
       width: auto;
     }
 
-    .logo span {
-      font-size: 1.2rem;
-      font-weight: bold;
+    .brand span {
+      font-size: 20px;
+      font-weight: 600;
     }
 
     .socials a {
-      margin-left: 14px;
-      font-size: 0.95rem;
-      color: #38bdf8;
-    }
-
-    .hero {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
+      margin-left: 12px;
+      text-decoration: none;
       color: #cbd5f5;
-      max-width: 700px;
-      margin: auto;
+      font-size: 14px;
     }
 
-    .sections {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      background: #111827;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #1f2937;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-content {
-      padding: 18px;
-    }
-
-    .card-content h3 {
-      margin-bottom: 8px;
-    }
-
-    .card-content p {
-      color: #9ca3af;
-      font-size: 0.95rem;
-    }
-
-    .signup {
-      background: #020617;
-      padding: 50px 20px;
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .signup h2 {
-      margin-bottom: 10px;
-    }
-
-    .signup p {
-      margin-bottom: 20px;
-      color: #cbd5f5;
-    }
-
-    .signup form {
-      max-width: 420px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .signup input,
-    .signup button {
-      padding: 12px;
-      border-radius: 6px;
-      border: none;
-      font-size: 1rem;
-    }
-
-    .signup input {
-      background: #020617;
-      border: 1px solid #334155;
-      color: white;
-    }
-
-    .signup button {
-      background: #38bdf8;
-      color: #020617;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      color: #64748b;
+    .socials a:hover {
+      color: #ffffff;
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">
-    <img src="/assets/logo.svg" alt="Tech Wealth Guide Logo" />
-    <span>Tech Wealth Guide</span>
-  </div>
-
-  <div class="socials">
-    <a href="https://techwealthguide.github.io" target="_blank">Website</a>
-    <a href="https://twitter.com/" target="_blank">Twitter</a>
-    <a href="https://facebook.com/" target="_blank">Facebook</a>
-  </div>
-</header>
-
-<section class="hero">
-  <h1>Building Tomorrow’s Millionaires Today</h1>
-  <p>
-    Learn AI, Crypto, Investing & Startups with structured lessons designed for real growth.
-  </p>
-</section>
-
-<section class="sections">
-  <div class="card">
-    <img src="/assets/images/crypto.jpg" alt="Crypto Trading" />
-    <div class="card-content">
-      <h3>Crypto</h3>
-      <p>Professional crypto education, exchanges, and strategies.</p>
+  <header>
+    <div class="brand">
+      <!-- LOGO (fixed path) -->
+      <img src="./assets/logo.svg" alt="Tech Wealth Guide Logo" />
+      <span>Tech Wealth Guide</span>
     </div>
-  </div>
 
-  <div class="card">
-    <img src="/assets/images/crypto.jpg" alt="AI" />
-    <div class="card-content">
-      <h3>Artificial Intelligence</h3>
-      <p>AI tools, automation, and income opportunities.</p>
+    <!-- SOCIAL LINKS (ONLY placeholders you control) -->
+    <div class="socials">
+      <a href="https://techwealthguide.github.io/" target="_blank">Website</a>
     </div>
-  </div>
-
-  <div class="card">
-    <img src="/assets/images/crypto.jpg" alt="Investing" />
-    <div class="card-content">
-      <h3>Investing</h3>
-      <p>Stocks, wealth building, and long-term strategies.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="/assets/images/crypto.jpg" alt="Startup" />
-    <div class="card-content">
-      <h3>Startups</h3>
-      <p>Build, scale, and monetize modern tech businesses.</p>
-    </div>
-  </div>
-</section>
-
-<section class="signup">
-  <h2>Sign up to unlock lessons</h2>
-  <p>Progress tracking, exclusive content, and updates.</p>
-  <form action="success.html" method="POST">
-    <input type="email" placeholder="Enter your email" required />
-    <button type="submit">Create Account</button>
-  </form>
-</section>
-
-<footer>
-  © 2025 Tech Wealth Guide. All rights reserved.
-</footer>
+  </header>
 
 </body>
 </html>
