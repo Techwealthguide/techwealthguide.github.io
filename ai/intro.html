@@ -1,117 +1,688 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Foundations — TechWealthGuide</title>
-<meta name="description" content="Learn artificial intelligence from first principles. Understand how AI works, how it creates value, and how to use it safely.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Introduction - Tech Wealth Guide</title>
+    <meta name="description" content="Learn what AI really is, practical applications, beginner tools, and ethical considerations for building wealth with AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --accent-color: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #ffffff;
+            --bg-gray: #f9fafb;
+            --bg-dark: #111827;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
 
-<link rel="stylesheet" href="/assets/style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1c2d'/%3E%3Cpath d='M28 60 L50 28 L72 60' stroke='%23ff8a3c' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M28 72 L50 40 L72 72' stroke='%234db1ff' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--bg-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--bg-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Course Header */
+        .course-header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .course-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            max-width: 600px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 25%;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 992px) {
+            .lesson-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .lesson-content {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lesson-section {
+            margin-bottom: 40px;
+        }
+
+        .lesson-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .lesson-section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: var(--text-primary);
+        }
+
+        .lesson-section p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .lesson-section ul, .lesson-section ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .lesson-section li {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--bg-gray);
+            padding: 25px;
+            border-radius: var(--radius);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .course-modules {
+            list-style: none;
+        }
+
+        .course-modules li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .course-modules a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-modules a:hover {
+            color: var(--primary-color);
+        }
+
+        .module-complete {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .lock-icon {
+            color: var(--text-secondary);
+        }
+
+        /* Call to Action */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-svg {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-light);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .course-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-svg">TWG</div>
+                <span>Tech Wealth Guide</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="/ai/intro.html" style="color: var(--primary-color); font-weight: 600;">AI</a>
+                <a href="/crypto/intro.html">Crypto</a>
+                <a href="/investing/intro.html">Investing</a>
+                <a href="/startup/intro.html">Startup</a>
+                <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <div class="nav">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <rect width="100" height="100" rx="22" fill="#11283f"/>
-        <path d="M28 60 L50 28 L72 60" stroke="#ff8a3c" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <path d="M28 72 L50 40 L72 72" stroke="#4db1ff" stroke-width="6" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>TechWealthGuide</span>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> &gt; 
+            <a href="/ai/intro.html">AI Course</a> &gt; 
+            <span>Introduction to AI</span>
+        </div>
     </div>
-  </div>
-</header>
 
-<div class="container">
+    <!-- Course Header -->
+    <div class="container course-header">
+        <h1>AI Introduction: Foundations & Practical Applications</h1>
+        <p class="subtitle">Learn what AI really is (not hype), types of AI, real-world applications, and ethical considerations for beginners.</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <p>Progress: 1 of 4 lessons complete</p>
+    </div>
 
-  <h1>AI Foundations</h1>
-  <p>This introduction removes hype and explains artificial intelligence as a practical tool for leverage, productivity, and long-term advantage.</p>
+    <!-- Lesson Content -->
+    <div class="container lesson-container">
+        <div class="lesson-content">
+            <div class="lesson-section">
+                <h2>What AI Really Is (Not Hype)</h2>
+                <p>Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning, and self-correction.</p>
+                
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>AI is not magic</strong> - It's mathematics, statistics, and data patterns</li>
+                    <li><strong>AI doesn't "think"</strong> - It processes inputs to generate outputs based on patterns</li>
+                    <li><strong>AI requires data</strong> - The quality of AI depends on the quality and quantity of data</li>
+                    <li><strong>AI has limitations</strong> - It excels at specific tasks but lacks general intelligence</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>1. What Artificial Intelligence Really Is</h2>
-    <p>
-      Artificial intelligence refers to computer systems that identify patterns in data and use those patterns to make predictions,
-      recommendations, or decisions. AI does not “think” — it calculates probabilities based on examples.
-    </p>
-    <p>
-      Understanding this distinction prevents overestimating AI and helps you use it strategically rather than emotionally.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Types of AI</h2>
+                
+                <h3>1. Machine Learning (ML)</h3>
+                <p>Systems that learn and improve from experience without being explicitly programmed.</p>
+                
+                <h3>2. Natural Language Processing (NLP)</h3>
+                <p>AI that understands, interprets, and generates human language (like ChatGPT).</p>
+                
+                <h3>3. Computer Vision</h3>
+                <p>AI that interprets and understands visual information from the world.</p>
+                
+                <h3>4. Robotics & Automation</h3>
+                <p>AI that controls physical devices to perform tasks autonomously.</p>
+            </div>
 
-  <div class="card">
-    <h2>2. Why AI Is an Economic Force</h2>
-    <p>
-      AI lowers the cost of cognition. Tasks that previously required experts — writing, analysis, design, planning —
-      can now be assisted or automated. This shifts value toward people who understand how to direct and apply AI systems.
-    </p>
-    <p>
-      Wealth is created by leverage, and AI is a new form of leverage comparable to software and capital.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Real-World Applications</h2>
+                
+                <h3>Business & Finance</h3>
+                <ul>
+                    <li>Fraud detection in banking</li>
+                    <li>Algorithmic trading</li>
+                    <li>Customer service chatbots</li>
+                    <li>Credit scoring and risk assessment</li>
+                </ul>
+                
+                <h3>Content Creation</h3>
+                <ul>
+                    <li>Writing assistance and content generation</li>
+                    <li>Image creation and editing</li>
+                    <li>Video editing automation</li>
+                    <li>Social media management</li>
+                </ul>
+                
+                <h3>Automation</h3>
+                <ul>
+                    <li>Email filtering and organization</li>
+                    <li>Data entry and processing</li>
+                    <li>Schedule optimization</li>
+                    <li>Report generation</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>3. Narrow AI vs General Intelligence</h2>
-    <p>
-      Today’s AI is narrow. It excels at specific tasks but lacks awareness, intention, or understanding.
-      This means it is powerful when directed clearly and unreliable when used blindly.
-    </p>
-    <p>
-      Successful users treat AI as an assistant, not an authority.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Beginner Tools You Can Use Today</h2>
+                
+                <h3>Free Tools:</h3>
+                <ul>
+                    <li><strong>ChatGPT</strong> - Conversational AI for writing, research, and problem-solving</li>
+                    <li><strong>Canva AI</strong> - Image generation and design assistance</li>
+                    <li><strong>Grammarly</strong> - AI-powered writing assistant</li>
+                    <li><strong>Hemingway Editor</strong> - Improves writing clarity</li>
+                </ul>
+                
+                <h3>Paid Tools (Free Trials Available):</h3>
+                <ul>
+                    <li><strong>Midjourney</strong> - Advanced image generation</li>
+                    <li><strong>Jasper</strong> - Marketing content creation</li>
+                    <li><strong>Copy.ai</strong> - Sales and marketing copy</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>4. Practical Uses You Can Apply Today</h2>
-    <p>
-      AI can help you:
-    </p>
-    <ul>
-      <li>Draft content and communications</li>
-      <li>Analyze markets and research faster</li>
-      <li>Automate repetitive workflows</li>
-      <li>Prototype ideas and products</li>
-    </ul>
-    <p>
-      The value is not in knowing tools — it is in knowing *where* to apply them.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>AI Myths vs Reality</h2>
+                
+                <h3>Myth 1: AI will replace all jobs</h3>
+                <p><strong>Reality:</strong> AI will transform jobs more than replace them. Jobs involving repetitive tasks are most vulnerable, while jobs requiring creativity, emotional intelligence, and complex problem-solving will evolve.</p>
+                
+                <h3>Myth 2: AI understands like humans</h3>
+                <p><strong>Reality:</strong> AI recognizes patterns but doesn't understand context or meaning like humans do. It lacks consciousness and true comprehension.</p>
+                
+                <h3>Myth 3: AI is always accurate</h3>
+                <p><strong>Reality:</strong> AI can make mistakes, perpetuate biases in training data, and produce "hallucinations" (confidently wrong answers).</p>
+            </div>
 
-  <div class="card">
-    <h2>5. How to Learn AI Without Getting Overwhelmed</h2>
-    <p>
-      Ignore trends. Focus on fundamentals. Learn:
-    </p>
-    <ul>
-      <li>Prompt clarity</li>
-      <li>Input quality</li>
-      <li>Verification of outputs</li>
-      <li>Ethical and security awareness</li>
-    </ul>
-    <p>
-      These skills remain valuable regardless of which AI tools dominate.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Ethical & Risk Considerations</h2>
+                
+                <ul>
+                    <li><strong>Bias:</strong> AI can perpetuate and amplify existing biases in data</li>
+                    <li><strong>Privacy:</strong> Data collection for AI training raises privacy concerns</li>
+                    <li><strong>Transparency:</strong> Many AI systems are "black boxes" with unclear decision-making processes</li>
+                    <li><strong>Job displacement:</strong> Certain roles may become obsolete, requiring workforce transition</li>
+                    <li><strong>Security:</strong> AI systems can be vulnerable to manipulation and attacks</li>
+                </ul>
+            </div>
 
-  <div class="section">
-    <a class="btn primary" href="/gate.html?gate=ai-advanced">Unlock Advanced AI Lessons</a>
-    <a class="btn ghost" href="/index.html">Back to Home</a>
-  </div>
+            <!-- Affiliate/Ad Placeholder -->
+            <div style="background-color: var(--bg-gray); padding: 25px; border-radius: var(--radius); margin: 40px 0; text-align: center;">
+                <h3 style="margin-bottom: 15px;">Recommended AI Tools</h3>
+                <p style="margin-bottom: 15px;">These are tools we personally use and recommend for getting started with AI:</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Try ChatGPT Plus</a>
+                    <a href="#" style="background-color: var(--accent-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Start with Midjourney</a>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary);">(Affiliate links - we earn a commission at no extra cost to you)</p>
+            </div>
 
-</div>
+            <!-- Call to Action -->
+            <div class="cta-box">
+                <h2>Ready for Advanced AI Strategies?</h2>
+                <p>Unlock the full AI course including monetization models, workflow automation, trading strategies, and AI tool comparisons.</p>
+                <a href="#" class="btn-primary">Sign Up to Unlock Advanced Lessons</a>
+            </div>
+        </div>
 
-<footer>
-  <p>
-    <a href="/legal/about.html">About</a> ·
-    <a href="/legal/privacy.html">Privacy</a> ·
-    <a href="/legal/terms.html">Terms</a>
-  </p>
-  <p>© TechWealthGuide</p>
-</footer>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>AI Course Modules</h3>
+            <ul class="course-modules">
+                <li>
+                    <a href="/ai/intro.html">
+                        <span>1. Introduction to AI</span>
+                        <span class="module-complete"><i class="fas fa-check-circle"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/ai/advanced.html">
+                        <span>2. Advanced AI Strategies</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>3. AI Monetization Models</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>4. Building AI Workflows</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>5. AI for Trading & Marketing</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>6. AI Limitations & Future</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+            </ul>
 
+            <div style="margin-top: 30px; padding: 20px; background-color: white; border-radius: var(--radius);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Download PDF Guide</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-secondary);">Get the complete AI Introduction Guide as a PDF.</p>
+                <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 15px; border-radius: var(--radius); text-decoration: none; display: inline-block; font-size: 0.9rem;">
+                    <i class="fas fa-download"></i> Download (Free)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="/" class="footer-logo">
+                        <div class="logo-svg">TWG</div>
+                        <span>Tech Wealth Guide</span>
+                    </a>
+                    <p style="color: #d1d5db; font-size: 0.95rem;">Professional education platform for AI, Crypto, Investing, and Startup wealth building.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Courses</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/ai/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">AI Fundamentals</a></li>
+                        <li><a href="/crypto/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Crypto Basics</a></li>
+                        <li><a href="/investing/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Investing 101</a></li>
+                        <li><a href="/startup/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Startup Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Legal</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/legal/privacy.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
+                        <li><a href="/legal/terms.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Financial Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Tech Wealth Guide. All rights reserved. This site provides educational content only, not financial advice.</p>
+                <p><a href="/legal/affiliate.html" style="color: #d1d5db; text-decoration: none;">Affiliate Disclosure</a> | <a href="/sitemap.xml" style="color: #d1d5db; text-decoration: none;">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
-</html>
+                                     </html>
