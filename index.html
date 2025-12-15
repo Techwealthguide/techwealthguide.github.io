@@ -1,282 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TechWealthGuide – Learn AI, Crypto, Investing & Startups</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechWealthGuide</title>  <!-- Favicon -->  <link rel="icon" type="image/png" href="assets/favicon.png" />  <!-- Font -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">  <!-- Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TechWealthGuide helps beginners learn AI, crypto, investing, and startups through practical lessons, tools, and downloadable resources.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/logo/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/logo/favicon.png">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #f7f9fc;
-      color: #0b1c2d;
-      line-height: 1.6;
+      background: #0b1c3d;
+      color: #ffffff;
+      overflow-x: hidden;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
+    /* HEADER */
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      padding: 16px 20px;
+      flex-wrap: wrap;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 600;
-      font-size: 18px;
     }
 
     .brand img {
-      height: 36px;
+      width: 40px;
+      height: 40px;
     }
 
-    nav ul {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      font-size: 14px;
-    }
-
-    nav ul li a {
-      color: #334155;
-      font-weight: 500;
-    }
-
-    nav ul li a:hover {
-      color: #2563eb;
-    }
-
-    .hero {
-      padding: 70px 0 50px;
-      background: #ffffff;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      max-width: 700px;
-      margin: auto;
+    .brand h1 {
+      font-size: 1.4rem;
       font-weight: 700;
+      white-space: nowrap;
     }
 
-    .hero p {
-      margin-top: 16px;
-      font-size: 17px;
-      color: #475569;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    .signin-btn {
+      border: 1px solid #ffffff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
     }
 
-    .hero-buttons {
-      margin-top: 30px;
+    /* NAV */
+    nav {
+      width: 100%;
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 18px;
+      margin-top: 14px;
       flex-wrap: wrap;
     }
 
-    .btn {
-      padding: 12px 22px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 14px;
+    nav a {
+      font-size: 0.95rem;
+      opacity: 0.9;
     }
 
-    .btn-primary {
-      background: #2563eb;
-      color: #ffffff;
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
     }
 
-    .btn-secondary {
-      background: #f1f5f9;
-      color: #0b1c2d;
-    }
-
-    section {
-      padding: 60px 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: #ffffff;
-      padding: 24px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .card h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #475569;
+    .hero h2 {
+      font-size: 2rem;
       margin-bottom: 14px;
     }
 
-    .card a {
-      font-size: 14px;
-      color: #2563eb;
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.85;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      margin: 40px auto;
+      background: #ffffff;
+      color: #000000;
+      max-width: 420px;
+      padding: 26px;
+      border-radius: 10px;
+    }
+
+    .newsletter h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
       font-weight: 600;
     }
 
-    footer {
-      background: #0b1c2d;
-      color: #cbd5f5;
-      padding: 40px 0;
+    .newsletter input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 0.95rem;
     }
 
-    footer a { color: #cbd5f5; }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-    }
-
-    .footer-grid h4 {
-      margin-bottom: 12px;
+    .newsletter button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 10px;
+      background: #0b1c3d;
       color: #ffffff;
-      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
     }
 
-    .social a {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
+    /* SOCIALS */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 30px 0 40px;
+      font-size: 1.4rem;
     }
 
+    .socials a {
+      opacity: 0.85;
+    }
+
+    /* MOBILE FIXES */
     @media (max-width: 600px) {
-      .hero h1 { font-size: 28px; }
-      nav ul { display: none; }
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+
+      nav {
+        gap: 12px;
+      }
     }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <div class="container nav">
+  </style></head>
+<body>  <header>
     <div class="brand">
-      <img src="/assets/logo/logo.svg" alt="TechWealthGuide">
-      TechWealthGuide
-    </div>
-    <nav>
-      <ul>
-        <li><a href="/ai/intro.html">AI</a></li>
-        <li><a href="/crypto/intro.html">Crypto</a></li>
-        <li><a href="/investing/intro.html">Investing</a></li>
-        <li><a href="/startup/intro.html">Startups</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <img src="assets/logo.svg" alt="TechWealthGuide logo" />
+      <h1>TechWealthGuide</h1>
+    </div><a href="signin.html" class="signin-btn">Sign In</a>
 
-<section class="hero">
-  <div class="container">
-    <h1>Learn AI, Crypto, Investing & Startups — The Smart Way</h1>
-    <p>
-      Practical education, tools, and downloadable guides designed to help you
-      build wealth in the modern digital economy.
-    </p>
+<nav>
+  <a href="#">AI</a>
+  <a href="#">Crypto</a>
+  <a href="#">Investing</a>
+  <a href="#">Startups</a>
+</nav>
 
-    <div class="hero-buttons">
-      <a href="/ai/intro.html" class="btn btn-primary">Start Learning</a>
-      <a href="#paths" class="btn btn-secondary">Explore Paths</a>
-    </div>
-  </div>
-</section>
-
-<section id="paths">
-  <div class="container">
-    <div class="grid">
-      <div class="card">
-        <h3>Artificial Intelligence</h3>
-        <p>Learn AI tools, prompts, no-code platforms, and real-world use cases.</p>
-        <a href="/ai/intro.html">View AI Path →</a>
-      </div>
-
-      <div class="card">
-        <h3>Cryptocurrency</h3>
-        <p>Understand crypto basics, trading strategies, DeFi, and risk control.</p>
-        <a href="/crypto/intro.html">View Crypto Path →</a>
-      </div>
-
-      <div class="card">
-        <h3>Investing</h3>
-        <p>Build long-term wealth with proven investment principles.</p>
-        <a href="/investing/intro.html">View Investing Path →</a>
-      </div>
-
-      <div class="card">
-        <h3>Startups & Business</h3>
-        <p>From idea to launch — business models, validation, and growth.</p>
-        <a href="/startup/intro.html">View Startup Path →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <h4>TechWealthGuide</h4>
-      <p>Building practical digital wealth skills.</p>
-    </div>
-
-    <div>
-      <h4>Follow Us</h4>
-      <div class="social">
-        <a href="https://www.facebook.com/Techwealthguide" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.tiktok.com/@techwealthguide" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://www.instagram.com/TechWealth.Official/" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-
-    <div>
-      <h4>Legal</h4>
-      <a href="/legal/about.html">About</a><br>
-      <a href="/legal/privacy.html">Privacy Policy</a><br>
-      <a href="/legal/terms.html">Terms of Service</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+  </header>  <section class="hero">
+    <h2>Making tomorrow’s millionaires today</h2>
+    <p>Learn AI, crypto, investing and modern tech skills designed to create real wealth — step by step.</p>
+  </section>  <section class="newsletter">
+    <h3>Join the newsletter</h3>
+    <p style="font-size:0.9rem; opacity:0.8;">Get lessons, tools & updates directly to your email.</p>
+    <input type="email" placeholder="Email address" />
+    <button>Subscribe</button>
+  </section>  <div class="socials">
+    <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div></body>
+  </html>
