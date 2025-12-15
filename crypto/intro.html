@@ -1,108 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crypto Foundations — TechWealthGuide</title>
-<meta name="description" content="Learn cryptocurrency from first principles. Understand blockchain, digital assets, risks, and long-term strategy.">
-
-<link rel="stylesheet" href="/assets/style.css">
-
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1c2d'/%3E%3Cpath d='M28 60 L50 28 L72 60' stroke='%23ff8a3c' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M28 72 L50 40 L72 72' stroke='%234db1ff' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Introduction - Tech Wealth Guide</title>
+    <meta name="description" content="Learn what cryptocurrency is, blockchain explained simply, Bitcoin vs Altcoins, wallets, security, and common scams to avoid.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Use the same CSS structure as ai/intro.html */
+        /* Just change colors to crypto theme */
+        :root {
+            --primary-color: #8b5cf6;
+            --secondary-color: #a78bfa;
+            --accent-color: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #ffffff;
+            --bg-gray: #f9fafb;
+            --bg-dark: #111827;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        /* Copy rest of CSS from ai/intro.html */
+        /* ... */
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-svg" style="background-color: var(--primary-color);">TWG</div>
+                <span>Tech Wealth Guide</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="/ai/intro.html">AI</a>
+                <a href="/crypto/intro.html" style="color: var(--primary-color); font-weight: 600;">Crypto</a>
+                <a href="/investing/intro.html">Investing</a>
+                <a href="/startup/intro.html">Startup</a>
+                <a href="#" class="btn-primary" style="padding: 10px 20px; background-color: var(--primary-color);">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <div class="nav">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <rect width="100" height="100" rx="22" fill="#11283f"/>
-        <path d="M28 60 L50 28 L72 60" stroke="#ff8a3c" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <path d="M28 72 L50 40 L72 72" stroke="#4db1ff" stroke-width="6" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>TechWealthGuide</span>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> &gt; 
+            <a href="/crypto/intro.html">Crypto Course</a> &gt; 
+            <span>Crypto Introduction</span>
+        </div>
     </div>
-  </div>
-</header>
 
-<div class="container">
+    <div class="container course-header">
+        <h1>Crypto Introduction: Understanding Digital Currency</h1>
+        <p class="subtitle">Learn what cryptocurrency is, blockchain explained simply, Bitcoin vs Altcoins, wallets, security, and common scams to avoid.</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" style="background-color: var(--primary-color);"></div>
+        </div>
+        <p>Progress: 1 of 4 lessons complete</p>
+    </div>
 
-  <h1>Crypto Foundations</h1>
-  <p>This introduction explains cryptocurrency clearly, realistically, and without speculation-driven hype.</p>
+    <div class="container lesson-container">
+        <div class="lesson-content">
+            <div class="lesson-section">
+                <h2 style="color: var(--primary-color);">What is Cryptocurrency?</h2>
+                <p>Cryptocurrency is a digital or virtual form of currency that uses cryptography for security and operates independently of a central bank.</p>
+                
+                <h3>Key Characteristics:</h3>
+                <ul>
+                    <li><strong>Decentralized</strong> - Not controlled by any government or institution</li>
+                    <li><strong>Digital Only</strong> - Exists only in electronic form</li>
+                    <li><strong>Secure</strong> - Uses cryptographic techniques for security</li>
+                    <li><strong>Transparent</strong> - Transactions are recorded on a public ledger</li>
+                    <li><strong>Global</strong> - Can be sent and received anywhere in the world</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>1. What Cryptocurrency Actually Is</h2>
-    <p>
-      Cryptocurrency is a digital asset secured by cryptography and recorded on a distributed ledger called a blockchain.
-      Unlike traditional money, control is decentralized and ownership is verified by the network.
-    </p>
-    <p>
-      This removes intermediaries but introduces personal responsibility.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2 style="color: var(--primary-color);">Blockchain Explained Simply</h2>
+                <p>Blockchain is the technology that powers cryptocurrencies. It's a digital ledger of transactions that is duplicated and distributed across the entire network of computer systems.</p>
+                
+                <h3>How Blockchain Works:</h3>
+                <ol>
+                    <li><strong>Transaction Request</strong> - Someone requests a transaction</li>
+                    <li><strong>Broadcast to Network</strong> - The transaction is broadcast to a network of computers (nodes)</li>
+                    <li><strong>Validation</strong> - Network nodes validate the transaction using algorithms</li>
+                    <li><strong>Block Creation</strong> - Once verified, the transaction is combined with others to create a block</li>
+                    <li><strong>Added to Chain</strong> - The new block is added to the existing blockchain</li>
+                    <li><strong>Transaction Complete</strong> - The transaction is complete and immutable</li>
+                </ol>
+            </div>
 
-  <div class="card">
-    <h2>2. Why Crypto Exists</h2>
-    <p>
-      Crypto emerged to solve problems of trust, censorship, and settlement speed in financial systems.
-      It is not designed to replace all money — it introduces an alternative.
-    </p>
-    <p>
-      Understanding the *problem* crypto solves is more important than chasing price movements.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2 style="color: var(--primary-color);">Bitcoin vs Altcoins</h2>
+                
+                <h3>Bitcoin (BTC)</h3>
+                <ul>
+                    <li><strong>First cryptocurrency</strong> - Created in 2009 by Satoshi Nakamoto</li>
+                    <li><strong>Digital gold</strong> - Primarily seen as a store of value</li>
+                    <li><strong>Limited supply</strong> - Only 21 million will ever exist</li>
+                    <li><strong>Most established</strong> - Largest market capitalization</li>
+                </ul>
+                
+                <h3>Altcoins (Alternative Coins)</h3>
+                <ul>
+                    <li><strong>Ethereum (ETH)</strong> - Platform for smart contracts and dApps</li>
+                    <li><strong>Litecoin (LTC)</strong> - Faster transaction times than Bitcoin</li>
+                    <li><strong>Cardano (ADA)</strong> - Focus on security and sustainability</li>
+                    <li><strong>Solana (SOL)</strong> - High-speed, low-cost transactions</li>
+                    <li><strong>Thousands more</strong> - Each with different purposes and technologies</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>3. Bitcoin vs Other Cryptocurrencies</h2>
-    <p>
-      Bitcoin prioritizes security, decentralization, and predictability.
-      Other cryptocurrencies prioritize flexibility, programmability, or speed.
-    </p>
-    <p>
-      Each tradeoff matters. There is no single “best” crypto.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2 style="color: var(--primary-color);">Wallets, Exchanges, and Security</h2>
+                
+                <h3>Types of Wallets:</h3>
+                <ul>
+                    <li><strong>Hardware Wallets</strong> (Ledger, Trezor) - Most secure, offline storage</li>
+                    <li><strong>Software Wallets</strong> (Exodus, Trust Wallet) - Apps on your devices</li>
+                    <li><strong>Web Wallets</strong> (MetaMask) - Browser extensions</li>
+                    <li><strong>Exchange Wallets</strong> - Stored on cryptocurrency exchanges</li>
+                </ul>
+                
+                <h3>Security Best Practices:</h3>
+                <ul>
+                    <li>Use hardware wallets for large amounts</li>
+                    <li>Never share your private keys or seed phrases</li>
+                    <li>Enable two-factor authentication (2FA)</li>
+                    <li>Use strong, unique passwords</li>
+                    <li>Be cautious of phishing attempts</li>
+                    <li>Keep software updated</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>4. Risks Every Beginner Must Understand</h2>
-    <ul>
-      <li>Custody risk (losing keys)</li>
-      <li>Market volatility</li>
-      <li>Regulatory uncertainty</li>
-      <li>Scams and misinformation</li>
-    </ul>
-    <p>
-      Risk management is a core skill, not an afterthought.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2 style="color: var(--primary-color);">Common Scams Beginners Fall For</h2>
+                
+                <h3>1. Phishing Scams</h3>
+                <p>Fake websites or emails pretending to be legitimate exchanges or wallets.</p>
+                
+                <h3>2. Fake Exchanges</h3>
+                <p>Platforms that look real but steal your deposits.</p>
+                
+                <h3>3. Pump and Dump Schemes</h3>
+                <p>Groups artificially inflate a coin's price then sell, leaving others with losses.</p>
+                
+                <h3>4. Fake ICOs/IDOs</h3>
+                <p>Initial coin offerings that take money and never deliver.</p>
+                
+                <h3>5. Social Media Giveaway Scams</h3>
+                <p>"Send 1 ETH, get 2 ETH back" - these are always scams.</p>
+            </div>
 
-  <div class="card">
-    <h2>5. A Responsible Learning Path</h2>
-    <p>
-      Beginners should focus on understanding wallets, custody, and blockchain fundamentals
-      before trading or speculating.
-    </p>
-    <p>
-      Long-term success favors patience and education.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2 style="color: var(--primary-color);">Risk Management Basics</h2>
+                
+                <ul>
+                    <li><strong>Only invest what you can afford to lose</strong> - Crypto is highly volatile</li>
+                    <li><strong>Diversify</strong> - Don't put all your money in one coin</li>
+                    <li><strong>Dollar-cost average</strong> - Invest fixed amounts regularly</li>
+                    <li><strong>Have an exit strategy</strong> - Know when to take profits or cut losses</li>
+                    <li><strong>Stay informed</strong> - Keep learning and stay updated</li>
+                    <li><strong>Avoid FOMO</strong> - Fear of missing out leads to bad decisions</li>
+                </ul>
+            </div>
 
-  <div class="section">
-    <a class="btn primary" href="/gate.html?gate=crypto-advanced">Unlock Advanced Crypto Lessons</a>
-    <a class="btn ghost" href="/index.html">Back to Home</a>
-  </div>
+            <!-- Affiliate/Ad Placeholder -->
+            <div style="background-color: var(--bg-gray); padding: 25px; border-radius: var(--radius); margin: 40px 0; text-align: center;">
+                <h3 style="margin-bottom: 15px;">Recommended Crypto Tools</h3>
+                <p style="margin-bottom: 15px;">These are tools we personally use for crypto security and trading:</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Get Ledger Wallet</a>
+                    <a href="#" style="background-color: var(--accent-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Try Coinbase Pro</a>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary);">(Affiliate links - we earn a commission at no extra cost to you)</p>
+            </div>
 
-</div>
+            <!-- Call to Action -->
+            <div class="cta-box" style="background: linear-gradient(135deg, var(--primary-color) 0%, #7c3aed 100%);">
+                <h2>Ready for Advanced Crypto Strategies?</h2>
+                <p>Unlock the full crypto course including trading strategies, DeFi, risk control, market cycles, and building a crypto plan.</p>
+                <a href="#" class="btn-primary">Sign Up to Unlock Advanced Lessons</a>
+            </div>
+        </div>
 
-<footer>
-  <p>
-    <a href="/legal/about.html">About</a> ·
-    <a href="/legal/privacy.html">Privacy</a> ·
-    <a href="/legal/terms.html">Terms</a>
-  </p>
-  <p>© TechWealthGuide</p>
-</footer>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3 style="color: var(--primary-color);">Crypto Course Modules</h3>
+            <ul class="course-modules">
+                <li>
+                    <a href="/crypto/intro.html">
+                        <span>1. Crypto Introduction</span>
+                        <span class="module-complete"><i class="fas fa-check-circle"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/crypto/advanced.html">
+                        <span>2. Advanced Crypto Strategies</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>3. Trading Strategies</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>4. DeFi Explained</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>5. Risk Management</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>6. Regulations & Taxes</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+            </ul>
 
+            <div style="margin-top: 30px; padding: 20px; background-color: white; border-radius: var(--radius);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Download Crypto Security Checklist</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-secondary);">Get our complete crypto security checklist as a PDF.</p>
+                <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 15px; border-radius: var(--radius); text-decoration: none; display: inline-block; font-size: 0.9rem;">
+                    <i class="fas fa-download"></i> Download (Free)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        // Same JavaScript as other pages
+    </script>
 </body>
-</html>
+  </html>
