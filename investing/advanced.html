@@ -1,106 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Tech Investing — TechWealthGuide</title>
-<meta name="description" content="Advanced tech investing lessons focused on analysis, capital allocation, and long-term decision-making.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Investing Strategies - Tech Wealth Guide</title>
+    <meta name="description" content="Learn portfolio construction, risk vs reward, long-term vs short-term strategies, market crash psychology, passive income, and capital protection.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #059669;
+            --secondary-color: #10b981;
+            --accent-color: #059669;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #ffffff;
+            --bg-gray: #f9fafb;
+            --bg-dark: #111827;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
 
-<link rel="stylesheet" href="/assets/style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1c2d'/%3E%3Cpath d='M28 60 L50 28 L72 60' stroke='%23ff8a3c' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M28 72 L50 40 L72 72' stroke='%234db1ff' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--bg-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--bg-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        .course-header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .course-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-svg {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-light);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .course-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-svg">TWG</div>
+                <span>Tech Wealth Guide</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="/ai/intro.html">AI</a>
+                <a href="/crypto/intro.html">Crypto</a>
+                <a href="/investing/intro.html" style="color: var(--primary-color); font-weight: 600;">Investing</a>
+                <a href="/startup/intro.html">Startup</a>
+                <a href="#" class="btn-primary" style="padding: 10px 20px; background-color: var(--primary-color); color: white; border-radius: var(--radius); text-decoration: none;">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <div class="nav">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <rect width="100" height="100" rx="22" fill="#11283f"/>
-        <path d="M28 60 L50 28 L72 60" stroke="#ff8a3c" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <path d="M28 72 L50 40 L72 72" stroke="#4db1ff" stroke-width="6" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>TechWealthGuide</span>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> &gt; 
+            <a href="/investing/intro.html">Investing Course</a> &gt; 
+            <span>Advanced Investing Strategies</span>
+        </div>
     </div>
-  </div>
-</header>
 
-<div class="container">
+    <div class="container course-header">
+        <h1>Advanced Investing: Portfolio Construction & Risk Management</h1>
+        <p class="subtitle">Learn portfolio construction, risk vs reward, market crash psychology, passive income strategies, and protecting capital.</p>
+    </div>
 
-  <h1>Advanced Tech Investing</h1>
-  <p>This section focuses on decision quality, capital allocation, and avoiding common investor failure modes.</p>
+    <!-- Content Lock -->
+    <div class="container" style="padding: 60px 0; text-align: center;">
+        <div style="background-color: var(--bg-gray); padding: 50px; border-radius: var(--radius); max-width: 600px; margin: 0 auto;">
+            <i class="fas fa-lock" style="font-size: 3rem; color: var(--text-secondary); margin-bottom: 20px;"></i>
+            <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Advanced Content Locked</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 25px;">This lesson contains advanced investing strategies, portfolio construction techniques, and professional risk management. Create a free account to unlock all advanced lessons.</p>
+            
+            <div style="background-color: white; padding: 25px; border-radius: var(--radius); margin-bottom: 30px; text-align: left;">
+                <h3 style="margin-bottom: 15px; color: var(--primary-color);">What You'll Learn:</h3>
+                <ul>
+                    <li style="margin-bottom: 10px;">Portfolio construction & asset allocation</li>
+                    <li style="margin-bottom: 10px;">Risk vs reward optimization</li>
+                    <li style="margin-bottom: 10px;">Long-term vs short-term strategies</li>
+                    <li style="margin-bottom: 10px;">Market crashes & emotional discipline</li>
+                    <li style="margin-bottom: 10px;">Passive income concepts</li>
+                    <li>Protecting capital during downturns</li>
+                </ul>
+            </div>
+            
+            <form style="max-width: 400px; margin: 0 auto;">
+                <input type="email" placeholder="Enter your email address" required style="width: 100%; padding: 14px 20px; border: 1px solid var(--border-color); border-radius: var(--radius); margin-bottom: 15px; font-size: 1rem;">
+                <button type="submit" style="background-color: var(--primary-color); color: white; border: none; padding: 14px 32px; border-radius: var(--radius); font-weight: 600; font-size: 1rem; cursor: pointer; width: 100%;">
+                    Unlock Advanced Lessons
+                </button>
+            </form>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary);">Already have an account? <a href="#" style="color: var(--primary-color);">Log in here</a></p>
+        </div>
+    </div>
 
-  <div class="card">
-    <h2>1. Thinking in Probabilities</h2>
-    <p>
-      Investing outcomes are probabilistic, not deterministic.
-      Great decisions can have poor short-term outcomes.
-    </p>
-    <p>
-      Long-term success comes from consistently making decisions with positive expected value.
-    </p>
-  </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="/" class="footer-logo">
+                        <div class="logo-svg">TWG</div>
+                        <span>Tech Wealth Guide</span>
+                    </a>
+                    <p style="color: #d1d5db; font-size: 0.95rem;">Professional education platform for AI, Crypto, Investing, and Startup wealth building.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Courses</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/ai/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">AI Fundamentals</a></li>
+                        <li><a href="/crypto/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Crypto Basics</a></li>
+                        <li><a href="/investing/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Investing 101</a></li>
+                        <li><a href="/startup/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Startup Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Legal</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/legal/privacy.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
+                        <li><a href="/legal/terms.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Financial Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Tech Wealth Guide. All rights reserved. This site provides educational content only, not financial advice.</p>
+                <p><a href="/legal/affiliate.html" style="color: #d1d5db; text-decoration: none;">Affiliate Disclosure</a> | <a href="/sitemap.xml" style="color: #d1d5db; text-decoration: none;">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
 
-  <div class="card">
-    <h2>2. Capital Allocation Frameworks</h2>
-    <p>
-      The best investors allocate capital based on opportunity cost.
-      Cash, equities, and alternatives compete for allocation.
-    </p>
-    <p>
-      Concentration increases returns and risk simultaneously.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>3. Moats and Competitive Advantage</h2>
-    <p>
-      Sustainable returns require durable advantages:
-      network effects, switching costs, scale, or brand.
-    </p>
-    <p>
-      Temporary advantages fade quickly in technology markets.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>4. Valuation Under Uncertainty</h2>
-    <p>
-      Precision is impossible. Ranges matter more than point estimates.
-      Stress-testing assumptions reveals hidden risk.
-    </p>
-    <p>
-      Conservative assumptions protect capital.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>5. Behavioral Traps</h2>
-    <p>
-      Overconfidence, recency bias, and narrative addiction destroy returns.
-      Systems and checklists reduce emotional mistakes.
-    </p>
-    <p>
-      Discipline compounds quietly.
-    </p>
-  </div>
-
-  <div class="section">
-    <a class="btn primary" href="/startup/intro.html">Continue to Startups & Entrepreneurship</a>
-    <a class="btn ghost" href="/investing/intro.html">Back to Investing Foundations</a>
-  </div>
-
-</div>
-
-<footer>
-  <p>
-    <a href="/legal/about.html">About</a> ·
-    <a href="/legal/privacy.html">Privacy</a> ·
-    <a href="/legal/terms.html">Terms</a>
-  </p>
-  <p>© TechWealthGuide</p>
-</footer>
-
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
 </body>
-</html>
+  </html>
