@@ -1,151 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>TechWealth Guide – Making Tomorrow’s Millionaires Today</title>
+  <meta charset="UTF-8">
+  <title>TechWealth Guide – Making tomorrow’s millionaires today</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="TechWealth Guide helps you master AI, Crypto, and Digital Wealth. Making tomorrow’s millionaires today.">
-
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
 
-  <!-- Font Awesome (SOCIAL ICONS) -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- SEO -->
+  <meta name="description" content="TechWealth Guide teaches AI, Crypto, Investing and Startups to help you build real wealth.">
+  <meta name="robots" content="index, follow">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #050b2c, #08124a);
+      background: linear-gradient(135deg, #0a1a3a, #0f2a5c);
       color: #ffffff;
-      overflow-x: hidden;
+      text-align: center;
     }
 
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
+      padding: 40px 20px 20px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    header img {
+      width: 90px;
+      margin-bottom: 15px;
     }
 
-    .logo img {
-      height: 40px;
-      width: auto;
-    }
-
-    .logo span {
-      font-size: 18px;
+    header h1 {
+      font-size: 2.2rem;
       font-weight: 700;
     }
 
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
 
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      font-size: 16px;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-
-    .signup-box {
-      background: rgba(255,255,255,0.08);
-      padding: 25px;
+    .card {
+      background: rgba(255,255,255,0.06);
       border-radius: 14px;
-      max-width: 420px;
-      margin: 0 auto;
+      padding: 25px 15px;
+      text-decoration: none;
+      color: #ffffff;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
 
-    .signup-box h2 {
-      font-size: 18px;
-      margin-bottom: 15px;
+    .card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.1);
     }
 
-    .signup-box input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 12px;
-      font-size: 14px;
+    .card i {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #4da3ff;
     }
 
-    .signup-box button {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      background: #1e90ff;
-      color: white;
-      font-size: 15px;
+    .card span {
+      display: block;
+      margin-top: 8px;
       font-weight: 600;
+    }
+
+    .signup {
+      background: #ffffff;
+      color: #0a1a3a;
+      padding: 35px 20px;
+      border-radius: 20px;
+      max-width: 420px;
+      margin: 40px auto;
+    }
+
+    .signup h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .signup p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .signup input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .signup button {
+      width: 100%;
+      padding: 12px;
+      background: #0a1a3a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
       cursor: pointer;
     }
 
-    .signup-box small {
-      display: block;
-      margin-top: 10px;
-      font-size: 12px;
-      opacity: 0.7;
-    }
-
     footer {
-      margin-top: 60px;
-      padding: 30px 20px;
-      text-align: center;
+      margin: 40px 0 20px;
     }
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-bottom: 15px;
-    }
-
-    .social-links a {
-      color: white;
-      font-size: 20px;
-      transition: opacity 0.2s ease;
-    }
-
-    .social-links a:hover {
-      opacity: 0.7;
+    .socials a {
+      color: #ffffff;
+      margin: 0 12px;
+      font-size: 22px;
+      text-decoration: none;
     }
 
     footer p {
-      font-size: 12px;
-      opacity: 0.6;
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 26px;
-      }
+      margin-top: 15px;
+      font-size: 0.85rem;
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -153,39 +146,46 @@
 <body>
 
 <header>
-  <div class="logo">
-    <img src="./assets/logo.svg" alt="TechWealth Guide Logo">
-    <span>TechWealth Guide</span>
-  </div>
+  <img src="/assets/logo.svg" alt="TechWealth Guide Logo">
+  <h1>TechWealth Guide</h1>
+  <p>Making tomorrow’s millionaires today</p>
 </header>
 
-<section class="hero">
-  <h1>Making Tomorrow’s Millionaires Today</h1>
-  <p>Learn AI, Crypto, and Digital Wealth strategies built for the future.</p>
+<section class="sections">
+  <a href="/ai/" class="card">
+    <i class="fa-solid fa-robot"></i>
+    <span>AI</span>
+  </a>
+  <a href="/crypto/" class="card">
+    <i class="fa-solid fa-bitcoin-sign"></i>
+    <span>Crypto</span>
+  </a>
+  <a href="/investing/" class="card">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Investing</span>
+  </a>
+  <a href="/startup/" class="card">
+    <i class="fa-solid fa-rocket"></i>
+    <span>Startup</span>
+  </a>
+</section>
 
-  <div class="signup-box">
-    <h2>Sign up to unlock lessons</h2>
-    <form>
-      <input type="email" placeholder="Email address" required>
-      <button type="submit">Create Free Account</button>
-    </form>
-    <small>Already have an account? Sign in coming soon.</small>
-  </div>
+<section class="signup">
+  <h2>Unlock Advanced Lessons</h2>
+  <p>Create an account to access premium guides and downloads.</p>
+  <form action="/success.html" method="post">
+    <input type="email" placeholder="Email address" required>
+    <button type="submit">Create Account</button>
+  </form>
 </section>
 
 <footer>
-  <div class="social-links">
-    <a href="https://www.facebook.com/Techwealthguide" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/techwealth.official/" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@techwealthguide" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-tiktok"></i>
-    </a>
+  <div class="socials">
+    <a href="https://facebook.com/Techwealthguide" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com/techwealthguide" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@techwealthguide" target="_blank"><i class="fab fa-tiktok"></i></a>
   </div>
-  <p>© 2025 TechWealth Guide. All rights reserved.</p>
+  <p>© 2025 TechWealth Guide</p>
 </footer>
 
 </body>
