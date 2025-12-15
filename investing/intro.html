@@ -1,106 +1,703 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tech Investing Foundations — TechWealthGuide</title>
-<meta name="description" content="Learn the foundations of tech investing. Understand risk, valuation, long-term strategy, and how technology creates wealth.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investing Introduction - Tech Wealth Guide</title>
+    <meta name="description" content="Learn what investing really means, difference between saving/trading/investing, stocks/ETFs basics, compound interest, and beginner mistakes to avoid.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #059669;
+            --secondary-color: #10b981;
+            --accent-color: #059669;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #ffffff;
+            --bg-gray: #f9fafb;
+            --bg-dark: #111827;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
 
-<link rel="stylesheet" href="/assets/style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1c2d'/%3E%3Cpath d='M28 60 L50 28 L72 60' stroke='%23ff8a3c' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M28 72 L50 40 L72 72' stroke='%234db1ff' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--bg-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--bg-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        .course-header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .course-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            max-width: 600px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 25%;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .lesson-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 992px) {
+            .lesson-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .lesson-content {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lesson-section {
+            margin-bottom: 40px;
+        }
+
+        .lesson-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .lesson-section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: var(--text-primary);
+        }
+
+        .lesson-section p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .lesson-section ul, .lesson-section ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .lesson-section li {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .sidebar {
+            background-color: var(--bg-gray);
+            padding: 25px;
+            border-radius: var(--radius);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .course-modules {
+            list-style: none;
+        }
+
+        .course-modules li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .course-modules a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-modules a:hover {
+            color: var(--primary-color);
+        }
+
+        .module-complete {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .lock-icon {
+            color: var(--text-secondary);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #047857 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-svg {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-light);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .course-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-svg">TWG</div>
+                <span>Tech Wealth Guide</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="/ai/intro.html">AI</a>
+                <a href="/crypto/intro.html">Crypto</a>
+                <a href="/investing/intro.html" style="color: var(--primary-color); font-weight: 600;">Investing</a>
+                <a href="/startup/intro.html">Startup</a>
+                <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <div class="nav">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <rect width="100" height="100" rx="22" fill="#11283f"/>
-        <path d="M28 60 L50 28 L72 60" stroke="#ff8a3c" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <path d="M28 72 L50 40 L72 72" stroke="#4db1ff" stroke-width="6" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>TechWealthGuide</span>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> &gt; 
+            <a href="/investing/intro.html">Investing Course</a> &gt; 
+            <span>Introduction to Investing</span>
+        </div>
     </div>
-  </div>
-</header>
 
-<div class="container">
+    <div class="container course-header">
+        <h1>Investing Introduction: Building Wealth Fundamentals</h1>
+        <p class="subtitle">Learn what investing really means, difference between saving/trading/investing, stocks/ETFs basics, compound interest, and beginner mistakes to avoid.</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <p>Progress: 1 of 4 lessons complete</p>
+    </div>
 
-  <h1>Tech Investing Foundations</h1>
-  <p>This introduction teaches how technology-driven businesses create value and how investors can participate responsibly.</p>
+    <div class="container lesson-container">
+        <div class="lesson-content">
+            <div class="lesson-section">
+                <h2>What Investing Really Means</h2>
+                <p>Investing is allocating money with the expectation of generating an income or profit. Unlike saving (preserving money) or trading (short-term speculation), investing focuses on long-term wealth building.</p>
+                
+                <h3>Core Principles:</h3>
+                <ul>
+                    <li><strong>Time in the market beats timing the market</strong> - Consistency matters more than perfect timing</li>
+                    <li><strong>Risk and return are related</strong> - Higher potential returns come with higher risk</li>
+                    <li><strong>Diversification reduces risk</strong> - Don't put all your eggs in one basket</li>
+                    <li><strong>Investing is a marathon, not a sprint</strong> - Long-term perspective is key</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>1. What Investing Actually Is</h2>
-    <p>
-      Investing is the allocation of capital into productive assets with the expectation of future returns.
-      In technology, returns often come from scalability and network effects.
-    </p>
-    <p>
-      Speculation focuses on price. Investing focuses on value creation.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Saving vs Trading vs Investing</h2>
+                
+                <h3>Saving (Preservation)</h3>
+                <ul>
+                    <li><strong>Goal:</strong> Preserve capital, maintain liquidity</li>
+                    <li><strong>Timeframe:</strong> Short-term (0-3 years)</li>
+                    <li><strong>Risk:</strong> Very low (FDIC insured accounts)</li>
+                    <li><strong>Returns:</strong> Low (0.5-2% typically)</li>
+                    <li><strong>Examples:</strong> Savings accounts, CDs, money market funds</li>
+                </ul>
+                
+                <h3>Trading (Speculation)</h3>
+                <ul>
+                    <li><strong>Goal:</strong> Profit from short-term price movements</li>
+                    <li><strong>Timeframe:</strong> Very short-term (seconds to months)</li>
+                    <li><strong>Risk:</strong> Very high</li>
+                    <li><strong>Returns:</strong> Variable, often negative for beginners</li>
+                    <li><strong>Examples:</strong> Day trading, swing trading, options trading</li>
+                </ul>
+                
+                <h3>Investing (Wealth Building)</h3>
+                <ul>
+                    <li><strong>Goal:</strong> Build wealth over the long term</li>
+                    <li><strong>Timeframe:</strong> Long-term (5+ years)</li>
+                    <li><strong>Risk:</strong> Moderate (managed through diversification)</li>
+                    <li><strong>Returns:</strong> Historically 7-10% annually in stock market</li>
+                    <li><strong>Examples:</strong> Retirement accounts, index funds, dividend stocks</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>2. Why Technology Dominates Modern Markets</h2>
-    <p>
-      Technology businesses benefit from low marginal costs and global reach.
-      This allows successful products to scale rapidly once product-market fit is achieved.
-    </p>
-    <p>
-      Investors seek companies that compound value over time.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Stocks, ETFs, Bonds Basics</h2>
+                
+                <h3>Stocks (Equities)</h3>
+                <ul>
+                    <li><strong>What:</strong> Ownership shares in a company</li>
+                    <li><strong>Returns:</strong> Dividends + capital appreciation</li>
+                    <li><strong>Risk:</strong> Medium to High</li>
+                    <li><strong>Best for:</strong> Long-term growth</li>
+                    <li><strong>Beginner tip:</strong> Start with well-established companies</li>
+                </ul>
+                
+                <h3>ETFs (Exchange-Traded Funds)</h3>
+                <ul>
+                    <li><strong>What:</strong> Baskets of stocks traded like individual stocks</li>
+                    <li><strong>Returns:</strong> Diversified market returns</li>
+                    <li><strong>Risk:</strong> Low to Medium (due to diversification)</li>
+                    <li><strong>Best for:</strong> Beginners, diversified exposure</li>
+                    <li><strong>Beginner tip:</strong> Start with S&P 500 index ETFs</li>
+                </ul>
+                
+                <h3>Bonds (Fixed Income)</h3>
+                <ul>
+                    <li><strong>What:</strong> Loans to governments or corporations</li>
+                    <li><strong>Returns:</strong> Fixed interest payments</li>
+                    <li><strong>Risk:</strong> Low to Medium</li>
+                    <li><strong>Best for:</strong> Income, portfolio stability</li>
+                    <li><strong>Beginner tip:</strong> Start with government bonds</li>
+                </ul>
+            </div>
 
-  <div class="card">
-    <h2>3. Risk, Time, and Patience</h2>
-    <p>
-      Higher potential returns come with uncertainty.
-      Long-term investing rewards patience and discipline more than frequent trading.
-    </p>
-    <p>
-      Understanding volatility prevents emotional decisions.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Compound Interest Explained</h2>
+                <p>Compound interest is often called the "eighth wonder of the world" because it allows your money to grow exponentially over time.</p>
+                
+                <h3>How It Works:</h3>
+                <ul>
+                    <li>You earn interest on your initial investment (principal)</li>
+                    <li>You also earn interest on the interest you've already earned</li>
+                    <li>This creates exponential growth over long periods</li>
+                </ul>
+                
+                <h3>The Rule of 72</h3>
+                <p>A quick way to estimate how long it takes for an investment to double:</p>
+                <ul>
+                    <li>Divide 72 by your annual return rate</li>
+                    <li>Example: At 7% return, money doubles every ~10 years (72 ÷ 7 = 10.3)</li>
+                    <li>Example: At 10% return, money doubles every ~7 years (72 ÷ 10 = 7.2)</li>
+                </ul>
+                
+                <h3>The Power of Starting Early</h3>
+                <ul>
+                    <li><strong>Start at 25:</strong> Invest $300/month at 7% for 40 years = $719,000</li>
+                    <li><strong>Start at 35:</strong> Invest $300/month at 7% for 30 years = $340,000</li>
+                    <li><strong>Start at 45:</strong> Invest $300/month at 7% for 20 years = $148,000</li>
+                </ul>
+                <p>Starting 10 years earlier more than doubles your result!</p>
+            </div>
 
-  <div class="card">
-    <h2>4. Valuation Basics</h2>
-    <p>
-      Valuation compares price to expected future cash flows.
-      Even great companies can be poor investments at extreme prices.
-    </p>
-    <p>
-      Margin of safety matters.
-    </p>
-  </div>
+            <div class="lesson-section">
+                <h2>Beginner Mistakes to Avoid</h2>
+                
+                <h3>1. Trying to Time the Market</h3>
+                <p><strong>Mistake:</strong> Waiting for the "perfect" time to invest<br>
+                <strong>Solution:</strong> Invest regularly regardless of market conditions (dollar-cost averaging)</p>
+                
+                <h3>2. Chasing Hot Tips</h3>
+                <p><strong>Mistake:</strong> Investing based on rumors or social media hype<br>
+                <strong>Solution:</strong> Do your own research, invest in what you understand</p>
+                
+                <h3>3. Lack of Diversification</h3>
+                <p><strong>Mistake:</strong> Putting all money in one stock or sector<br>
+                <strong>Solution:</strong> Spread investments across different assets</p>
+                
+                <h3>4. Letting Emotions Drive Decisions</h3>
+                <p><strong>Mistake:</strong> Selling in panic during downturns<br>
+                <strong>Solution:</strong> Have a plan and stick to it through market cycles</p>
+                
+                <h3>5. Not Considering Fees</h3>
+                <p><strong>Mistake:</strong> Ignoring management fees and transaction costs<br>
+                <strong>Solution:</strong> Use low-cost index funds and discount brokers</p>
+                
+                <h3>6. Waiting Until You Have "Enough" Money</h3>
+                <p><strong>Mistake:</strong> Thinking you need thousands to start<br>
+                <strong>Solution:</strong> Start with whatever you can afford, even $50/month</p>
+            </div>
 
-  <div class="card">
-    <h2>5. Building a Learning-Based Portfolio</h2>
-    <p>
-      Beginners should focus on diversified exposure, continuous learning, and avoiding overconfidence.
-      Knowledge compounds just like capital.
-    </p>
-    <p>
-      The goal is sustainability, not shortcuts.
-    </p>
-  </div>
+            <!-- Affiliate/Ad Placeholder -->
+            <div style="background-color: var(--bg-gray); padding: 25px; border-radius: var(--radius); margin: 40px 0; text-align: center;">
+                <h3 style="margin-bottom: 15px;">Recommended Investing Platforms</h3>
+                <p style="margin-bottom: 15px;">These are platforms we recommend for beginner investors:</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Open Vanguard Account</a>
+                    <a href="#" style="background-color: var(--secondary-color); color: white; padding: 10px 20px; border-radius: var(--radius); text-decoration: none;">Start with Fidelity</a>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary);">(Affiliate links - we earn a commission at no extra cost to you)</p>
+            </div>
 
-  <div class="section">
-    <a class="btn primary" href="/gate.html?gate=investing-advanced">Unlock Advanced Investing Lessons</a>
-    <a class="btn ghost" href="/index.html">Back to Home</a>
-  </div>
+            <!-- Call to Action -->
+            <div class="cta-box">
+                <h2>Ready for Advanced Investing Strategies?</h2>
+                <p>Unlock the full investing course including portfolio construction, risk management, passive income strategies, and protecting capital during market crashes.</p>
+                <a href="#" class="btn-primary">Sign Up to Unlock Advanced Lessons</a>
+            </div>
+        </div>
 
-</div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Investing Course Modules</h3>
+            <ul class="course-modules">
+                <li>
+                    <a href="/investing/intro.html">
+                        <span>1. Investing Introduction</span>
+                        <span class="module-complete"><i class="fas fa-check-circle"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/investing/advanced.html">
+                        <span>2. Advanced Investing Strategies</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>3. Portfolio Construction</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>4. Risk vs Reward</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>5. Market Cycles & Psychology</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>6. Passive Income Strategies</span>
+                        <span class="lock-icon"><i class="fas fa-lock"></i></span>
+                    </a>
+                </li>
+            </ul>
 
-<footer>
-  <p>
-    <a href="/legal/about.html">About</a> ·
-    <a href="/legal/privacy.html">Privacy</a> ·
-    <a href="/legal/terms.html">Terms</a>
-  </p>
-  <p>© TechWealthGuide</p>
-</footer>
+            <div style="margin-top: 30px; padding: 20px; background-color: white; border-radius: var(--radius);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Download Investing Checklist</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-secondary);">Get our complete beginner investing checklist as a PDF.</p>
+                <a href="#" style="background-color: var(--primary-color); color: white; padding: 10px 15px; border-radius: var(--radius); text-decoration: none; display: inline-block; font-size: 0.9rem;">
+                    <i class="fas fa-download"></i> Download (Free)
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="/" class="footer-logo">
+                        <div class="logo-svg">TWG</div>
+                        <span>Tech Wealth Guide</span>
+                    </a>
+                    <p style="color: #d1d5db; font-size: 0.95rem;">Professional education platform for AI, Crypto, Investing, and Startup wealth building.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@techwealthguide" class="social-icon" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Courses</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/ai/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">AI Fundamentals</a></li>
+                        <li><a href="/crypto/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Crypto Basics</a></li>
+                        <li><a href="/investing/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Investing 101</a></li>
+                        <li><a href="/startup/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Startup Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Legal</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="/legal/privacy.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
+                        <li><a href="/legal/terms.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Financial Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Tech Wealth Guide. All rights reserved. This site provides educational content only, not financial advice.</p>
+                <p><a href="/legal/affiliate.html" style="color: #d1d5db; text-decoration: none;">Affiliate Disclosure</a> | <a href="/sitemap.xml" style="color: #d1d5db; text-decoration: none;">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
-</html>
+                                       </html>
