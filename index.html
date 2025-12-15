@@ -2,176 +2,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechWealthGuide</title>  <!-- Favicon -->  <link rel="icon" type="image/png" href="assets/favicon.png" />  <!-- Font -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">  <!-- Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+  <title>TechWealthGuide — Build Wealth with AI, Crypto & Tech</title>  <!-- SEO -->  <meta name="description" content="TechWealthGuide provides structured lessons, tools and playbooks to help you build wealth using AI, crypto, investing and startups." />  <!-- Favicon -->  <link rel="icon" type="image/png" href="assets/favicon.png" />  <!-- Fonts & Icons -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  <style>
+    :root {
+      --primary: #0b5ed7;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --muted: #64748b;
+      --card: #ffffff;
     }
 
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #0b1c3d;
-      color: #ffffff;
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--light);
+      color: var(--dark);
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { text-decoration: none; color: inherit; }
 
     /* HEADER */
     header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 20px;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
     }
 
     .brand img {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
     }
 
-    .brand h1 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .signin-btn {
-      border: 1px solid #ffffff;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-    }
-
-    /* NAV */
     nav {
-      width: 100%;
       display: flex;
-      justify-content: center;
       gap: 18px;
-      margin-top: 14px;
       flex-wrap: wrap;
     }
 
     nav a {
-      font-size: 0.95rem;
-      opacity: 0.9;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    nav a:hover { color: var(--primary); }
+
+    .auth-btn {
+      padding: 8px 14px;
+      border: 1px solid var(--primary);
+      border-radius: 6px;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 600;
     }
 
     /* HERO */
     .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 20px 50px;
       text-align: center;
-      padding: 60px 20px 40px;
     }
 
-    .hero h2 {
-      font-size: 2rem;
+    .hero h1 {
+      font-size: 38px;
       margin-bottom: 14px;
     }
 
     .hero p {
-      font-size: 1rem;
-      opacity: 0.85;
-      max-width: 520px;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 720px;
       margin: 0 auto;
     }
 
-    /* NEWSLETTER */
-    .newsletter {
-      margin: 40px auto;
-      background: #ffffff;
-      color: #000000;
+    /* SIGN UP CARD */
+    .signup-wrap {
       max-width: 420px;
+      margin: 40px auto 20px;
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
       padding: 26px;
-      border-radius: 10px;
     }
 
-    .newsletter h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
+    .signup-wrap h2 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .signup-wrap p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .signup-wrap label {
+      font-size: 13px;
       font-weight: 600;
     }
 
-    .newsletter input {
+    .signup-wrap input {
       width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 0.95rem;
+      padding: 12px;
+      margin: 6px 0 16px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
     }
 
-    .newsletter button {
+    .signup-wrap button {
       width: 100%;
-      margin-top: 14px;
-      padding: 10px;
-      background: #0b1c3d;
+      padding: 12px;
+      background: var(--primary);
       color: #ffffff;
       border: none;
-      border-radius: 6px;
-      font-size: 0.95rem;
+      border-radius: 8px;
+      font-weight: 600;
       cursor: pointer;
+    }
+
+    .signup-wrap .note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+      text-align: center;
     }
 
     /* SOCIALS */
     .socials {
       display: flex;
       justify-content: center;
-      gap: 18px;
-      margin: 30px 0 40px;
-      font-size: 1.4rem;
+      gap: 20px;
+      margin: 30px 0 60px;
     }
 
     .socials a {
-      opacity: 0.85;
+      font-size: 22px;
+      color: var(--muted);
     }
 
-    /* MOBILE FIXES */
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 1.6rem;
-      }
+    .socials a:hover { color: var(--primary); }
 
-      nav {
-        gap: 12px;
-      }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      nav { justify-content: center; width: 100%; }
     }
   </style></head>
-<body>  <header>
+<body><header>
+  <div class="header-inner">
     <div class="brand">
       <img src="assets/logo.svg" alt="TechWealthGuide logo" />
-      <h1>TechWealthGuide</h1>
-    </div><a href="signin.html" class="signin-btn">Sign In</a>
-
-<nav>
+      TechWealthGuide
+    </div><nav>
   <a href="#">AI</a>
   <a href="#">Crypto</a>
   <a href="#">Investing</a>
   <a href="#">Startups</a>
 </nav>
 
-  </header>  <section class="hero">
-    <h2>Making tomorrow’s millionaires today</h2>
-    <p>Learn AI, crypto, investing and modern tech skills designed to create real wealth — step by step.</p>
-  </section>  <section class="newsletter">
-    <h3>Join the newsletter</h3>
-    <p style="font-size:0.9rem; opacity:0.8;">Get lessons, tools & updates directly to your email.</p>
-    <input type="email" placeholder="Email address" />
-    <button>Subscribe</button>
-  </section>  <div class="socials">
-    <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
-  </div></body>
-  </html>
+<a href="#" class="auth-btn">Sign in</a>
+
+  </div>
+</header><section class="hero">
+  <h1>Build wealth with practical tech skills</h1>
+  <p>Structured learning paths, real-world playbooks and tools to help you profit from AI, crypto, investing and modern startups.</p>
+</section><section class="signup-wrap">
+  <h2>Sign up to unlock lessons</h2>
+  <p>Get access to advanced guides, downloadable PDFs and curated tools used by real builders.</p>  <form>
+    <label>Email address</label>
+    <input type="email" placeholder="you@example.com" required />
+    <button type="submit">Create free account</button>
+  </form>  <div class="note">No spam. Cancel anytime.</div>
+</section><div class="socials">
+  <a href="https://facebook.com/Techwealthguide" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com/TechWealth.Official" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://tiktok.com/@techwealthguide" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+</div><footer>
+  © 2025 TechWealthGuide · Making tomorrow’s millionaires today
+</footer></body>
+                                                                                         </html> 
