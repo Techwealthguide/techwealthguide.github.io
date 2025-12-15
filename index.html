@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechWealth Guide | Build Wealth with Tech, AI & Crypto</title>
+  <title>TechWealth Guide – Making Tomorrow’s Millionaires Today</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="TechWealth Guide helps you master AI, Crypto, and Digital Wealth. Making tomorrow’s millionaires today.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Font Awesome (SOCIAL ICONS) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -23,183 +27,124 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f7f9fc;
-      color: #1f2937;
+      background: linear-gradient(135deg, #050b2c, #08124a);
+      color: #ffffff;
       overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ===== HEADER ===== */
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px;
-    }
-
-    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      padding: 16px 20px;
     }
 
-    .brand {
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .brand img, .brand svg {
-      height: 42px;
+    .logo img {
+      height: 40px;
       width: auto;
     }
 
-    .brand-text {
-      font-size: 20px;
+    .logo span {
+      font-size: 18px;
       font-weight: 700;
-      color: #2563eb;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: #2563eb;
-    }
-
-    .signin {
-      background: #2563eb;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    .signin:hover {
-      background: #1d4ed8;
-    }
-
-    /* ===== HERO ===== */
     .hero {
-      padding: 60px 16px;
-      background: linear-gradient(180deg, #ffffff, #f1f5f9);
       text-align: center;
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     .hero h1 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 16px;
+      font-size: 32px;
+      margin-bottom: 12px;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      color: #4b5563;
-    }
-
-    /* ===== CTA ===== */
-    .cta {
-      margin-top: 40px;
-      background: #ffffff;
-      padding: 30px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .cta h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .cta p {
-      font-size: 15px;
-      margin-bottom: 20px;
-      color: #6b7280;
-    }
-
-    .cta input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-      border: 1px solid #d1d5db;
-      font-size: 15px;
-    }
-
-    .cta button {
-      width: 100%;
-      padding: 12px;
-      background: #2563eb;
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
       font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .signup-box {
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 14px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .signup-box h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .signup-box input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .signup-box button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: #1e90ff;
+      color: white;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
     }
 
-    .cta button:hover {
-      background: #1d4ed8;
+    .signup-box small {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      opacity: 0.7;
     }
 
-    /* ===== FOOTER ===== */
     footer {
       margin-top: 60px;
-      padding: 30px 16px;
-      background: #ffffff;
-      border-top: 1px solid #e5e7eb;
+      padding: 30px 20px;
       text-align: center;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 12px;
+      gap: 18px;
+      margin-bottom: 15px;
     }
 
     .social-links a {
+      color: white;
       font-size: 20px;
-      color: #374151;
+      transition: opacity 0.2s ease;
     }
 
     .social-links a:hover {
-      color: #2563eb;
+      opacity: 0.7;
     }
 
     footer p {
-      font-size: 14px;
-      color: #6b7280;
+      font-size: 12px;
+      opacity: 0.6;
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       .hero h1 {
-        font-size: 28px;
-      }
-
-      .nav-links {
-        justify-content: center;
-        width: 100%;
+        font-size: 26px;
       }
     }
   </style>
@@ -208,54 +153,37 @@
 <body>
 
 <header>
-  <div class="container">
-    <div class="nav">
-      <div class="brand">
-        <!-- Professional SVG Logo (Diamond + Text) -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
-          <!-- Diamond Icon -->
-          <path d="M15,25 L25,15 L35,25 L25,35 Z" fill="#2563eb"/>
-          <!-- TechWealth Guide Text -->
-          <text x="50" y="35" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#2563eb">
-            TechWealthGuide
-          </text>
-        </svg>
-        <span class="brand-text" style="display: none;">TechWealthGuide</span>
-      </div>
-
-      <div class="nav-links">
-        <a href="#">AI</a>
-        <a href="#">Crypto</a>
-        <a href="#">Investing</a>
-        <a href="#">Startups</a>
-      </div>
-
-      <a href="#" class="signin">Sign In</a>
-    </div>
+  <div class="logo">
+    <img src="./assets/logo.svg" alt="TechWealth Guide Logo">
+    <span>TechWealth Guide</span>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Build Wealth with Tech, AI & Crypto</h1>
-  <p>
-    Practical lessons, tools, and playbooks designed to help you grow income,
-    invest smarter, and build digital businesses from anywhere.
-  </p>
+  <h1>Making Tomorrow’s Millionaires Today</h1>
+  <p>Learn AI, Crypto, and Digital Wealth strategies built for the future.</p>
 
-  <div class="cta">
+  <div class="signup-box">
     <h2>Sign up to unlock lessons</h2>
-    <p>Free access to beginner lessons. Advanced content unlocked inside.</p>
-
-    <input type="email" placeholder="Enter your email" />
-    <button>Unlock Lessons</button>
+    <form>
+      <input type="email" placeholder="Email address" required>
+      <button type="submit">Create Free Account</button>
+    </form>
+    <small>Already have an account? Sign in coming soon.</small>
   </div>
 </section>
 
 <footer>
   <div class="social-links">
-    <a href="https://www.facebook.com/Techwealthguide" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/techwealth.official/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@techwealthguide" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.facebook.com/Techwealthguide" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/techwealth.official/" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@techwealthguide" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-tiktok"></i>
+    </a>
   </div>
   <p>© 2025 TechWealth Guide. All rights reserved.</p>
 </footer>
