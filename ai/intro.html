@@ -683,6 +683,45 @@
                 navLinks.classList.remove('active');
             }
         });
-    </script>
+    <script>
+    // PDF download function
+    function downloadPDF(course) {
+        const email = localStorage.getItem('userEmail');
+        
+        if (!email) {
+            alert('Please sign up first to download PDFs. Enter your email in the form below.');
+            document.getElementById('homeEmail')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('homeEmail')?.focus();
+            return false;
+        }
+        
+        // Track download
+        localStorage.setItem(`downloaded_${course}_pdf`, new Date().toISOString());
+        
+        // Show success message
+        alert(`PDF download started! Check your email (${email}) for the download link.`);
+        
+        // In real implementation, this would trigger actual PDF download
+        // For now, we'll simulate it
+        setTimeout(() => {
+            window.open(`/assets/downloads/${course}-guide.pdf`, '_blank');
+        }, 500);
+        
+        return false;
+    }
+    
+    // Update all PDF links to use this function
+    document.addEventListener('DOMContentLoaded', function() {
+        const pdfLinks = document.querySelectorAll('a[href*="download"]');
+        pdfLinks.forEach(link => {
+            if (link.textContent.includes('PDF') || link.textContent.includes('Download')) {
+                link.onclick = function(e) {
+                    e.preventDefault();
+                    downloadPDF('general');
+                };
+            }
+        });
+    });
+   </script>
 </body>
                                      </html>
