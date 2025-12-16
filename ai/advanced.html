@@ -5,19 +5,240 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced AI Strategies - Tech Wealth Guide</title>
     <meta name="description" content="Learn AI monetization models, building workflows without coding, AI tools comparison, and preparing for AI-driven markets.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
     <style>
-        /* Use the same CSS as intro.html */
-        /* For brevity, copy the entire CSS from intro.html */
-        /* The structure is identical, only content changes */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --accent-color: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #ffffff;
+            --bg-gray: #f9fafb;
+            --bg-dark: #111827;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--bg-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--bg-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        .course-header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .course-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-img {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-light);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .course-header h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header (same as intro.html) -->
     <header>
         <div class="container nav-container">
             <a href="/" class="logo">
-                <div class="logo-svg">TWG</div>
+                <div class="logo-img">TWG</div>
                 <span>Tech Wealth Guide</span>
             </a>
             
@@ -30,12 +251,11 @@
                 <a href="/crypto/intro.html">Crypto</a>
                 <a href="/investing/intro.html">Investing</a>
                 <a href="/startup/intro.html">Startup</a>
-                <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
+                <a href="#signup" class="btn-primary" style="padding: 10px 20px; background-color: var(--primary-color); color: white; border-radius: var(--radius); text-decoration: none;">Sign Up</a>
             </nav>
         </div>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
             <a href="/">Home</a> &gt; 
@@ -44,23 +264,17 @@
         </div>
     </div>
 
-    <!-- Course Header -->
     <div class="container course-header">
         <h1>Advanced AI: Monetization & Professional Workflows</h1>
         <p class="subtitle">Learn AI monetization models, build workflows without coding, compare AI tools, and prepare for AI-driven job markets.</p>
-        
-        <div class="progress-bar">
-            <div class="progress-fill" style="width: 50%;"></div>
-        </div>
-        <p>Progress: 2 of 4 lessons complete</p>
     </div>
 
     <!-- Content Lock -->
-    <div class="container" style="padding: 60px 0; text-align: center;">
+    <div class="container" style="padding: 60px 0; text-align: center;" id="signup">
         <div style="background-color: var(--bg-gray); padding: 50px; border-radius: var(--radius); max-width: 600px; margin: 0 auto;">
             <i class="fas fa-lock" style="font-size: 3rem; color: var(--text-secondary); margin-bottom: 20px;"></i>
             <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Advanced Content Locked</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 25px;">This lesson contains advanced AI strategies, monetization models, and professional workflows. Create a free account to unlock all advanced lessons.</p>
+            <p style="color: var(--text-secondary); margin-bottom: 25px;">This lesson contains advanced AI strategies, monetization models, and professional workflows. Sign up for free to unlock all advanced lessons.</p>
             
             <div style="background-color: white; padding: 25px; border-radius: var(--radius); margin-bottom: 30px; text-align: left;">
                 <h3 style="margin-bottom: 15px; color: var(--primary-color);">What You'll Learn:</h3>
@@ -74,35 +288,34 @@
                 </ul>
             </div>
             
-            <form style="max-width: 400px; margin: 0 auto;">
-                <input type="email" placeholder="Enter your email address" required style="width: 100%; padding: 14px 20px; border: 1px solid var(--border-color); border-radius: var(--radius); margin-bottom: 15px; font-size: 1rem;">
+            <form id="advancedSignupForm" style="max-width: 400px; margin: 0 auto;">
+                <input type="email" placeholder="Enter your email address" required id="advancedEmail" style="width: 100%; padding: 14px 20px; border: 1px solid var(--border-color); border-radius: var(--radius); margin-bottom: 15px; font-size: 1rem;">
                 <button type="submit" style="background-color: var(--primary-color); color: white; border: none; padding: 14px 32px; border-radius: var(--radius); font-weight: 600; font-size: 1rem; cursor: pointer; width: 100%;">
                     Unlock Advanced Lessons
                 </button>
             </form>
             
-            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary);">Already have an account? <a href="#" style="color: var(--primary-color);">Log in here</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary);">Already have an account? <a href="/thank-you.html" style="color: var(--primary-color);">Access your lessons here</a></p>
         </div>
     </div>
 
-    <!-- Footer (same as intro.html) -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div>
                     <a href="/" class="footer-logo">
-                        <div class="logo-svg">TWG</div>
+                        <div class="logo-img">TWG</div>
                         <span>Tech Wealth Guide</span>
                     </a>
                     <p style="color: #d1d5db; font-size: 0.95rem;">Professional education platform for AI, Crypto, Investing, and Startup wealth building.</p>
                     <div class="social-links">
-                        <a href="https://facebook.com/techwealthguide" class="social-icon" target="_blank">
+                        <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/techwealthguide" class="social-icon" target="_blank">
+                        <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://tiktok.com/@techwealthguide" class="social-icon" target="_blank">
+                        <a href="https://tiktok.com" class="social-icon" target="_blank" rel="noopener">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
@@ -140,6 +353,28 @@
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('navLinks').classList.toggle('active');
         });
+
+        // Advanced lesson signup
+        document.getElementById('advancedSignupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('advancedEmail').value;
+            
+            if (email) {
+                // Store email in localStorage
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('signupTime', new Date().toISOString());
+                localStorage.setItem('advancedAccessRequested', 'true');
+                
+                // Show success message
+                alert(`Thank you ${email}! Advanced lesson access requested. You'll receive access instructions via email.`);
+                this.reset();
+                
+                // Redirect to thank you page
+                setTimeout(() => {
+                    window.location.href = '/thank-you.html';
+                }, 1500);
+            }
+        });
     </script>
 </body>
-  </html>
+    </html>
