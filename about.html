@@ -5,56 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Tech Wealth Guide</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
     <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-gray: #f9fafb;
+        }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-primary);
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
+            background-color: white;
         }
-        h1 { color: #1e3a8a; }
-        h2 { color: #374151; margin-top: 30px; }
+        h1 { color: var(--primary-color); margin-bottom: 20px; }
+        h2 { color: var(--primary-color); margin-top: 30px; margin-bottom: 15px; }
         .back-link { margin-bottom: 30px; }
-        .back-link a { color: #1e3a8a; text-decoration: none; }
-        .contact-box {
-            background-color: #f0f9ff;
+        .back-link a { 
+            color: var(--primary-color); 
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .mission-box {
+            background-color: var(--bg-gray);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .value-card {
+            background: white;
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--primary-color);
+        }
+        .contact-box {
+            background-color: var(--bg-gray);
+            padding: 25px;
             border-radius: 8px;
             margin: 30px 0;
         }
+        ul { padding-left: 20px; margin: 15px 0; }
+        li { margin-bottom: 8px; }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <div class="back-link">
-        <a href="/">&larr; Back to Home</a>
+        <a href="/"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
     
     <h1>About Tech Wealth Guide</h1>
     
-    <h2>Our Mission</h2>
-    <p>Tech Wealth Guide was founded to provide beginner-friendly, practical education on building wealth in the digital economy. We focus on AI, Crypto, Investing, and Startups - the four pillars of modern wealth creation.</p>
+    <div class="mission-box">
+        <h2>Our Mission</h2>
+        <p>Tech Wealth Guide was founded to provide beginner-friendly, practical education on building wealth in the digital economy. We focus on AI, Crypto, Investing, and Startups - the four pillars of modern wealth creation.</p>
+    </div>
     
     <h2>What We Believe</h2>
-    <ul>
-        <li>Financial education should be accessible to everyone</li>
-        <li>Learning should be practical, not theoretical</li>
-        <li>Long-term wealth building beats short-term speculation</li>
-        <li>Technology creates unprecedented opportunities</li>
-    </ul>
+    <div class="values-grid">
+        <div class="value-card">
+            <h3>Accessibility</h3>
+            <p>Financial education should be accessible to everyone, regardless of background or experience level.</p>
+        </div>
+        <div class="value-card">
+            <h3>Practicality</h3>
+            <p>Learning should be practical and actionable, not theoretical. We focus on what you can apply immediately.</p>
+        </div>
+        <div class="value-card">
+            <h3>Long-Term Focus</h3>
+            <p>Long-term wealth building beats short-term speculation. We teach sustainable strategies.</p>
+        </div>
+        <div class="value-card">
+            <h3>Technology-Driven</h3>
+            <p>Technology creates unprecedented opportunities for wealth creation that didn't exist before.</p>
+        </div>
+    </div>
     
     <h2>Our Approach</h2>
     <p>We break down complex topics into simple, actionable lessons. No financial jargon, no hype - just clear, practical guidance you can apply immediately.</p>
+    
+    <h2>What Makes Us Different</h2>
+    <ul>
+        <li><strong>Beginner-First:</strong> We start from absolute basics</li>
+        <li><strong>No Fluff:</strong> Only practical, actionable content</li>
+        <li><strong>Free Foundation:</strong> All introductory content is completely free</li>
+        <li><strong>Community Focused:</strong> We're building a community of learners</li>
+        <li><strong>Ethical Approach:</strong> We prioritize responsible investing and ethical practices</li>
+    </ul>
     
     <h2>Our Team</h2>
     <p>Tech Wealth Guide is built by industry professionals with years of experience in technology, finance, and entrepreneurship. We combine practical experience with teaching expertise to deliver maximum value.</p>
     
     <div class="contact-box">
         <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:techwealthguide@gmail.com">techwealthguide@gmail.com</a></p>
-        <p>For support questions: <a href="mailto:techwealthguide@gmail.com">techwealthguide@gmail.com</a></p>
-        <p>For business inquiries: <a href="mailto:techwealthguide@gmail.com">techwealthguide@gmail.com</a></p>
+        <p><strong>General Inquiries:</strong> <a href="mailto:techwealthguide1@gmail.com">techwealthguide1@gmail.com</a></p>
+        <p><strong>Support Questions:</strong> <a href="mailto:techwealthguide1@gmail.com">techwealthguide1@gmail.com</a></p>
+        <p><strong>Business Inquiries:</strong> <a href="mailto:techwealthguide1@gmail.com">techwealthguide1@gmail.com</a></p>
+        <p><strong>Response Time:</strong> We aim to respond within 24-48 hours</p>
+    </div>
+    
+    <div class="back-link">
+        <a href="/"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
 </body>
 </html>
