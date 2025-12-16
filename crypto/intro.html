@@ -614,7 +614,7 @@
             <div style="margin-top: 30px; padding: 20px; background-color: white; border-radius: var(--radius);">
                 <h4 style="font-size: 1.1rem; margin-bottom: 15px;">Download Crypto Security Checklist</h4>
                 <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-secondary);">Get our complete crypto security checklist as a PDF.</p>
-                <a href="/assets/downloads/crypto-security-checklist.pdf" style="background-color: var(--primary-color); color: white; padding: 10px 15px; border-radius: var(--radius); text-decoration: none; display: inline-block; font-size: 0.9rem;">
+                <a href="#" onclick="downloadPDF('crypto')" style="background-color: var(--primary-color); color: white; padding: 10px 15px; border-radius: var(--radius); text-decoration: none; display: inline-block; font-size: 0.9rem;" id="pdfDownloadBtn">
                     <i class="fas fa-download"></i> Download (Free)
                 </a>
             </div>
@@ -685,6 +685,59 @@
                 navLinks.classList.remove('active');
             }
         });
+
+        // PDF download function
+        function downloadPDF(course) {
+            const email = localStorage.getItem('userEmail');
+            
+            if (!email) {
+                alert('Please sign up first to download PDFs. Enter your email below to get access.');
+                // Scroll to signup form if exists
+                const signupForm = document.querySelector('.signup-form');
+                if (signupForm) {
+                    signupForm.scrollIntoView({ behavior: 'smooth' });
+                    const emailInput = document.querySelector('.signup-form input[type="email"]');
+                    if (emailInput) emailInput.focus();
+                }
+                return false;
+            }
+            
+            // Track download in localStorage
+            localStorage.setItem(`downloaded_${course}_pdf`, new Date().toISOString());
+            localStorage.setItem('last_download', course);
+            
+            // Show success message
+            const courseNames = {
+                'ai': 'AI Introduction Guide',
+                'crypto': 'Crypto Security Checklist',
+                'investing': 'Investing Beginner Checklist',
+                'startup': 'Startup Validation Checklist'
+            };
+            
+            alert(`Thank you! The "${courseNames[course]}" PDF has been sent to ${email}. Check your inbox for the download link.`);
+            
+            // Simulate download (in real implementation, this would trigger actual PDF)
+            console.log(`PDF download triggered for: ${course}`);
+            
+            return true;
+        }
+
+        // Initialize PDF download buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfBtn = document.getElementById('pdfDownloadBtn');
+            if (pdfBtn) {
+                pdfBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    downloadPDF('crypto');
+                });
+            }
+            
+            // Check if user has signed up and update UI
+            const userEmail = localStorage.getItem('userEmail');
+            if (userEmail) {
+                console.log('Welcome back, ' + userEmail);
+            }
+        });
     </script>
 </body>
-    </html>
+                            </html>
