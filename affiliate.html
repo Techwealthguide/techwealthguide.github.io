@@ -5,27 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affiliate Program - Tech Wealth Guide</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
     <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-gray: #f9fafb;
+        }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-primary);
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
+            background-color: white;
         }
-        h1 { color: #1e3a8a; }
-        h2 { color: #374151; margin-top: 30px; }
+        h1 { color: var(--primary-color); margin-bottom: 20px; }
+        h2 { color: var(--primary-color); margin-top: 30px; margin-bottom: 15px; }
+        h3 { color: var(--text-primary); margin-top: 20px; }
         .back-link { margin-bottom: 30px; }
-        .back-link a { color: #1e3a8a; text-decoration: none; }
-        .cta-box {
-            background-color: #f0f9ff;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-            border-left: 4px solid #1e3a8a;
+        .back-link a { 
+            color: var(--primary-color); 
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-        .benefits-list {
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .cta-box h2 { color: white; margin-top: 0; }
+        .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
@@ -35,13 +53,54 @@
             background: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--primary-color);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .stat {
+            background: var(--bg-gray);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .application-steps {
+            background: var(--bg-gray);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: var(--bg-gray);
         }
     </style>
 </head>
 <body>
     <div class="back-link">
-        <a href="/">&larr; Back to Home</a>
+        <a href="/"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
     
     <h1>Affiliate Program</h1>
@@ -49,32 +108,46 @@
     <div class="cta-box">
         <h2>Join Our Affiliate Program</h2>
         <p>Earn commissions by referring students to Tech Wealth Guide courses.</p>
-        <p><strong>Commission Rate:</strong> 30% on all course sales</p>
-        <p><strong>Cookie Duration:</strong> 90 days</p>
-        <p><strong>Payout:</strong> Monthly via PayPal or bank transfer</p>
-        <p><strong>Minimum Payout:</strong> $50</p>
-        <p>Email <a href="mailto:techwealthguide@gmail.com">techwealthguide@gmail.com</a> with subject "Affiliate Application" to apply.</p>
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">30%</div>
+                <div>Commission Rate</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">90 Days</div>
+                <div>Cookie Duration</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$50</div>
+                <div>Minimum Payout</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">Monthly</div>
+                <div>Payout Schedule</div>
+            </div>
+        </div>
+        <a href="mailto:techwealthguide1@gmail.com?subject=Affiliate%20Program%20Application" class="btn">Apply Now</a>
     </div>
     
     <h2>How It Works</h2>
     <ol>
-        <li>Sign up for our affiliate program</li>
+        <li>Sign up for our affiliate program (free to join)</li>
         <li>Get your unique affiliate links and marketing materials</li>
         <li>Share links on your website, social media, or email list</li>
         <li>Earn 30% commission on every sale you refer</li>
-        <li>Track your earnings in real-time</li>
-        <li>Get paid monthly when you reach the $50 threshold</li>
+        <li>Track your earnings in real-time dashboard</li>
+        <li>Get paid monthly via PayPal or bank transfer</li>
     </ol>
     
     <h2>Program Benefits</h2>
-    <div class="benefits-list">
+    <div class="benefits-grid">
         <div class="benefit">
             <h3>High Commissions</h3>
-            <p>30% commission on all course sales - one of the highest rates in the industry.</p>
+            <p>30% commission on all course sales - one of the highest rates available.</p>
         </div>
         <div class="benefit">
             <h3>Long Cookie Duration</h3>
-            <p>90-day cookie tracking means you get credit for sales even if they don't happen immediately.</p>
+            <p>90-day cookie tracking means you get credit even if purchases happen later.</p>
         </div>
         <div class="benefit">
             <h3>Marketing Materials</h3>
@@ -89,19 +162,28 @@
     <h2>Who Can Join?</h2>
     <ul>
         <li>Bloggers and content creators in finance/tech niches</li>
-        <li>YouTube creators and podcasters</li>
+        <li>YouTube creators, podcasters, and influencers</li>
         <li>Newsletter publishers with relevant audiences</li>
-        <li>Financial advisors and coaches</li>
+        <li>Financial advisors, coaches, and educators</li>
+        <li>Website owners in related niches</li>
         <li>Anyone with an audience interested in tech wealth building</li>
     </ul>
     
-    <h2>Application Process</h2>
-    <p>Email <a href="mailto:techwealthguide@gmail.com">techwealthguide@gmail.com</a> with:</p>
-    <ol>
-        <li>Your name and contact information</li>
-        <li>Links to your website/social media</li>
-        <li>Brief description of your audience</li>
-        <li>How you plan to promote our courses</li>
-    </ol>
+    <div class="application-steps">
+        <h2>Application Process</h2>
+        <p>Email <a href="mailto:techwealthguide1@gmail.com">techwealthguide1@gmail.com</a> with subject "Affiliate Application" and include:</p>
+        <ol>
+            <li>Your name and contact information</li>
+            <li>Links to your website/social media/audience platforms</li>
+            <li>Brief description of your audience (size, interests)</li>
+            <li>How you plan to promote our courses</li>
+            <li>Previous affiliate experience (if any)</li>
+        </ol>
+        <p><strong>Note:</strong> We're currently building our premium course library. As an early affiliate, you'll get exclusive access when courses launch.</p>
+    </div>
+    
+    <div class="back-link">
+        <a href="/"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
 </body>
-  </html>
+</html>
