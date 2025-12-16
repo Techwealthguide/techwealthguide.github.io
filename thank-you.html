@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Tech Wealth Guide</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        .thank-you-box {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .success-icon {
+            font-size: 60px;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #6b7280;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .next-steps {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: left;
+        }
+        .next-steps h3 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        .btn {
+            background: #1e3a8a;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: white;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-box">
+        <div class="success-icon">✓</div>
+        <h1>Welcome to Tech Wealth Guide!</h1>
+        <p>Thank you for signing up. You now have access to all our introductory lessons.</p>
+        
+        <div class="next-steps">
+            <h3>Next Steps:</h3>
+            <p>1. Check your email for confirmation</p>
+            <p>2. Start with any introductory course below</p>
+            <p>3. Complete intro lessons to unlock advanced content</p>
+        </div>
+        
+        <div style="margin: 30px 0;">
+            <a href="/ai/intro.html" class="btn">Start AI Course</a>
+            <a href="/crypto/intro.html" class="btn">Start Crypto Course</a>
+            <a href="/investing/intro.html" class="btn">Start Investing Course</a>
+            <a href="/startup/intro.html" class="btn">Start Startup Course</a>
+        </div>
+        
+        <p><small>Need help? Email us at <a href="mailto:techwealthguide1@gmail.com">techwealthguide1@gmail.com</a></small></p>
+    </div>
+
+    <script>
+        // Auto-redirect after 30 seconds
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 30000);
+    </script>
+</body>
+</html>
