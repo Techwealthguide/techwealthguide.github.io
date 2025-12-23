@@ -307,97 +307,6 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
-
-        /* Footer */
-        footer {
-            background-color: var(--bg-dark);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 60px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo .logo-svg {
-            background-color: white;
-            color: var(--primary-color);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
-            text-align: center;
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: var(--bg-light);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: var(--shadow-md);
-                gap: 20px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .course-header h1 {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -621,55 +530,16 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="/" class="footer-logo">
-                        <div class="logo-svg">TWG</div>
-                        <span>Tech Wealth Guide</span>
-                    </a>
-                    <p style="color: #d1d5db; font-size: 0.95rem;">Professional education platform for AI, Crypto, Investing, and Startup wealth building.</p>
-                    <div class="social-links">
-                        <a href="https://facebook.com/techwealthguide" class="social-icon" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://instagram.com/techwealthguide" class="social-icon" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://tiktok.com/@techwealthguide" class="social-icon" target="_blank">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Courses</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="/ai/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">AI Fundamentals</a></li>
-                        <li><a href="/crypto/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Crypto Basics</a></li>
-                        <li><a href="/investing/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Investing 101</a></li>
-                        <li><a href="/startup/intro.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Startup Guide</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: white;">Legal</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="/legal/privacy.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
-                        <li><a href="/legal/terms.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Terms of Service</a></li>
-                        <li><a href="/legal/disclaimer.html" style="color: #d1d5db; text-decoration: none; font-size: 0.95rem;">Financial Disclaimer</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Tech Wealth Guide. All rights reserved. This site provides educational content only, not financial advice.</p>
-                <p><a href="/legal/affiliate.html" style="color: #d1d5db; text-decoration: none;">Affiliate Disclosure</a> | <a href="/sitemap.xml" style="color: #d1d5db; text-decoration: none;">Sitemap</a></p>
-            </div>
-        </div>
-    </footer>
+    <!-- DYNAMIC FOOTER INCLUSION -->
+    <!-- This replaces the original static footer -->
+    <div id="footer-container"></div>
+    <script>
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
 
     <script>
         // Mobile menu toggle
