@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF - Tech Wealth Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse your site's existing CSS variables */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --accent-color: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #ffffff;
+            --bg-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .download-container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 20px;
+        }
+        
+        .download-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .download-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .download-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .download-content {
+            padding: 40px;
+        }
+        
+        .download-info {
+            background-color: var(--bg-gray);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .download-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* Ad/Offer Section */
+        .offer-section {
+            background-color: #fff8e1;
+            border: 1px solid #ffd54f;
+            border-radius: var(--radius);
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .offer-section h3 {
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+        
+        .affiliate-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .affiliate-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        
+        .affiliate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Download Button */
+        .download-btn-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: var(--bg-gray);
+            border-radius: var(--radius);
+        }
+        
+        .download-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 18px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #0da46f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+        }
+        
+        .file-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .back-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 600px) {
+            .download-header {
+                padding: 30px 20px;
+            }
+            
+            .download-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .download-content {
+                padding: 25px;
+            }
+            
+            .affiliate-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="download-container">
+        <div class="download-header">
+            <h1 id="pdf-title">AI Introduction Guide</h1>
+            <p>Your free download is ready</p>
+        </div>
+        
+        <div class="download-content">
+            <div class="download-info">
+                <h3>What's in this guide?</h3>
+                <p id="pdf-description">This comprehensive guide covers AI fundamentals, practical applications, beginner tools, and ethical considerations for building wealth with AI technology.</p>
+            </div>
+            
+            <!-- Ad/Offer Section - Your revenue source -->
+            <div class="offer-section">
+                <h3>Recommended Tools & Services</h3>
+                <p>Check out these tools we use and recommend. Using our links supports Tech Wealth Guide at no extra cost to you.</p>
+                <div class="affiliate-links">
+                    <a href="YOUR_AFFILIATE_LINK_1" class="affiliate-btn" target="_blank">Try ChatGPT Plus</a>
+                    <a href="YOUR_AFFILIATE_LINK_2" class="affiliate-btn" target="_blank">Start with Midjourney</a>
+                    <a href="YOUR_AFFILIATE_LINK_3" class="affiliate-btn" target="_blank">Learn Crypto Trading</a>
+                </div>
+            </div>
+            
+            <!-- Main Download Button -->
+            <div class="download-btn-container">
+                <a href="#" id="pdf-download-link" class="download-btn" download>
+                    <i class="fas fa-download"></i> Download PDF Now (Free)
+                </a>
+                <div class="file-info">
+                    <span><i class="fas fa-file-pdf"></i> PDF Format</span>
+                    <span><i class="fas fa-sd-card"></i> <span id="pdf-size">2.4 MB</span></span>
+                    <span><i class="fas fa-clock"></i> Updated: <span id="pdf-date">Dec 2023</span></span>
+                </div>
+                <p style="margin-top: 15px; color: var(--text-secondary); font-size: 0.9rem;">
+                    No payment required. Direct download from TechWealthGuide.com
+                </p>
+            </div>
+            
+            <div class="back-link">
+                <a href="#" id="back-to-course">← Back to Course</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <script>
+        // Get PDF details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfId = urlParams.get('pdf') || 'ai-intro';
+        
+        // PDF configuration - you'll expand this for multiple PDFs
+        const pdfConfig = {
+            'ai-intro': {
+                title: 'AI Introduction Guide',
+                description: 'This comprehensive guide covers AI fundamentals, practical applications, beginner tools, and ethical considerations for building wealth with AI technology.',
+                fileUrl: '/downloads/ai-introduction-guide.pdf',
+                fileSize: '2.4 MB',
+                updated: 'Dec 2023',
+                backLink: '/ai/intro.html'
+            },
+            'crypto-basics': {
+                title: 'Crypto Basics Guide',
+                description: 'Learn cryptocurrency fundamentals, wallet security, trading basics, and risk management for beginners.',
+                fileUrl: '/downloads/crypto-basics-guide.pdf',
+                fileSize: '1.8 MB',
+                updated: 'Nov 2023',
+                backLink: '/crypto/intro.html'
+            }
+            // Add more PDFs here as you create them
+        };
+        
+        // Set PDF details on the page
+        const pdf = pdfConfig[pdfId] || pdfConfig['ai-intro'];
+        
+        document.getElementById('pdf-title').textContent = pdf.title;
+        document.getElementById('pdf-description').textContent = pdf.description;
+        document.getElementById('pdf-download-link').href = pdf.fileUrl;
+        document.getElementById('pdf-size').textContent = pdf.fileSize;
+        document.getElementById('pdf-date').textContent = pdf.updated;
+        document.getElementById('back-to-course').href = pdf.backLink;
+        
+        // Track download (for future analytics)
+        document.getElementById('pdf-download-link').addEventListener('click', function() {
+            console.log(`PDF downloaded: ${pdf.title}`);
+            // Here you can add analytics tracking later
+        });
+    </script>
+</body>
+</html>
