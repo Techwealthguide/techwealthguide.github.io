@@ -1,298 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Wealth Guide — Learn AI, Crypto, Investing & Startups</title>
-    
-    <!-- PHASE 1, TASK 5: SEARCH & DISCOVERABILITY IMPROVEMENTS -->
-    <meta name="description" content="Beginner-friendly, practical lessons to build long-term wealth in AI, Crypto, Investing, and Startups. Learn the smart way.">
-    <meta property="og:title" content="Tech Wealth Guide">
-    <meta property="og:description" content="Practical wealth-building education for the digital economy.">
-    <meta property="og:image" content="https://techwealthguide.github.io/assets/og-image.jpg">
-    <meta property="og:url" content="https://techwealthguide.github.io">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="apple-mobile-web-app-title" content="Tech Wealth Guide">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    
-    <!-- Your existing stylesheets and fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* YOUR EXISTING FULL CSS (approx 300+ lines) */
-        :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #0ea5e9;
-            --accent-color: #10b981;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --bg-light: #ffffff;
-            --bg-gray: #f9fafb;
-            --bg-dark: #111827;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --radius: 8px;
-            --transition: all 0.3s ease;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Wealth Guide — Learn AI, Crypto, Investing & Startups</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta name="description" content="Practical, beginner-friendly lessons to build long-term wealth through AI, Crypto, Investing, and Startups." />
+  <meta property="og:title" content="Tech Wealth Guide" />
+  <meta property="og:description" content="Build wealth the smart way in the digital economy." />
+  <meta property="og:image" content="https://techwealthguide.github.io/assets/og-image.jpg" />
+  <meta property="og:url" content="https://techwealthguide.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text-primary);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-        }
+  <link rel="icon" href="/assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+    }
 
-        /* YOUR EXISTING HEADER, NAV, HERO, CATEGORY STYLES */
-        /* ... (approx 250+ lines of your existing CSS remain unchanged) ... */
+    header {
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-        /* PHASE 1, TASK 1: NEW SOCIAL FOOTER STYLES */
-        .social-footer {
-            background-color: var(--bg-gray);
-            padding: 50px 0 30px;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            margin-top: 80px;
-        }
-        
-        .social-footer p.social-title {
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-        
-        .social-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .social-icon:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .footer-bottom {
-            padding-top: 25px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        /* PHASE 1, TASK 5: Improved ad space */
-        .ad-space-improved {
-            background-color: #f8f9fa;
-            border: 1px dashed #ccc;
-            border-radius: var(--radius);
-            padding: 25px;
-            text-align: center;
-            margin: 40px auto;
-            color: #666;
-            font-size: 0.95rem;
-            max-width: 800px;
-        }
-        
-        .ad-space-improved small {
-            display: block;
-            margin-top: 10px;
-            color: #999;
-        }
-        
-        /* Your existing responsive styles */
-        @media (max-width: 768px) {
-            .social-icons {
-                gap: 20px;
-            }
-            
-            .social-icon {
-                width: 42px;
-                height: 42px;
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .card img {
+      height: 48px;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 40px 20px;
+      text-align: center;
+      background: #f9fafb;
+    }
+
+    .social a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+  </style>
 </head>
+
 <body>
-    <!-- YOUR EXISTING HEADER/NAVIGATION (unchanged) -->
-    <header>
-        <div class="container nav-container">
-            <a href="/" class="logo">
-                <div class="logo-svg">TWG</div>
-                <span>Tech Wealth Guide</span>
-            </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav class="nav-links" id="navLinks">
-                <a href="/ai/intro.html">AI</a>
-                <a href="/crypto/intro.html">Crypto</a>
-                <a href="/investing/intro.html">Investing</a>
-                <a href="/startup/intro.html">Startup</a>
-                <a href="#" class="btn-primary" style="padding: 10px 20px;">Sign Up</a>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
-        <!-- YOUR EXISTING HERO SECTION -->
-        <section class="hero">
-            <h1>Learn AI, Crypto, Investing & Startups — The Smart Way</h1>
-            <p class="hero-subtitle">Beginner-friendly, practical lessons designed to help you build long-term wealth in the digital economy.</p>
-            
-            <!-- PHASE 1: Improved Ad Space -->
-            <div class="ad-space-improved">
-                Advertisement Space (728x90)
-                <small>Google Ads ready - Replace with actual ad code</small>
-            </div>
-        </section>
+<header>
+  <div class="nav">
+    <a href="/" class="logo">
+      <img src="/assets/logo.svg" alt="Tech Wealth Guide" />
+    </a>
+    <nav>
+      <a href="/ai/intro.html">AI</a>
+      <a href="/crypto/intro.html">Crypto</a>
+      <a href="/investing/intro.html">Investing</a>
+      <a href="/startup/intro.html">Startup</a>
+      <a href="/signup.html">Sign Up</a>
+    </nav>
+  </div>
+</header>
 
-        <!-- YOUR EXISTING CATEGORY GRIDS -->
-        <section class="category-grid">
-            <!-- AI Category -->
-            <div class="category-card">
-                <div class="category-icon" style="background-color: #3b82f6;">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3>AI</h3>
-                <p>Learn practical AI applications, tools, and monetization strategies without the hype.</p>
-                <a href="/ai/intro.html" class="category-btn">Start Learning</a>
-                <p class="category-note">Advanced lessons require signup</p>
-            </div>
-            
-            <!-- Crypto Category -->
-            <div class="category-card">
-                <div class="category-icon" style="background-color: #10b981;">
-                    <i class="fas fa-coins"></i>
-                </div>
-                <h3>Crypto</h3>
-                <p>Understand blockchain, trading strategies, and secure investing in the crypto space.</p>
-                <a href="/crypto/intro.html" class="category-btn">Start Learning</a>
-                <p class="category-note">Advanced lessons require signup</p>
-            </div>
-            
-            <!-- Investing Category -->
-            <div class="category-card">
-                <div class="category-icon" style="background-color: #8b5cf6;">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Investing</h3>
-                <p>Build wealth through smart investing, portfolio management, and risk control.</p>
-                <a href="/investing/intro.html" class="category-btn">Start Learning</a>
-                <p class="category-note">Advanced lessons require signup</p>
-            </div>
-            
-            <!-- Startup Category -->
-            <div class="category-card">
-                <div class="category-icon" style="background-color: #f59e0b;">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>Startup</h3>
-                <p>Launch and grow your tech startup with practical guidance and proven strategies.</p>
-                <a href="/startup/intro.html" class="category-btn">Start Learning</a>
-                <p class="category-note">Advanced lessons require signup</p>
-            </div>
-        </section>
-        
-        <!-- Your existing additional content remains here -->
-    </main>
+<section class="hero">
+  <h1>Learn AI, Crypto, Investing & Startups</h1>
+  <p>Clear, practical education to help you build wealth — without hype.</p>
+</section>
 
-    <!-- PHASE 1, TASK 1: NEW SOCIAL FOOTER -->
-    <footer class="social-footer">
-        <div class="container">
-            <p class="social-title">Follow Tech Wealth Guide for Updates & Insights</p>
-            
-            <div class="social-icons">
-                <!-- STRICT: Official TWG pages in new browser tabs -->
-                <a href="https://facebook.com/Techwealthguide" 
-                   class="social-icon" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="Tech Wealth Guide on Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                
-                <a href="https://instagram.com/TechWealth.Official" 
-                   class="social-icon" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="Tech Wealth Guide on Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                
-                <a href="https://tiktok.com/@techwealthguide" 
-                   class="social-icon" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="Tech Wealth Guide on TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Tech Wealth Guide. All rights reserved. Educational content only, not financial advice.</p>
-                <p>
-                    <a href="/legal/privacy.html" style="color: var(--text-secondary); text-decoration: none;">Privacy</a> | 
-                    <a href="/legal/terms.html" style="color: var(--text-secondary); text-decoration: none;">Terms</a> | 
-                    <a href="/legal/disclaimer.html" style="color: var(--text-secondary); text-decoration: none;">Disclaimer</a>
-                </p>
-            </div>
-        </div>
-    </footer>
+<section class="categories">
+  <div class="card">
+    <img src="/assets/ai-icon.png" alt="AI">
+    <h3>Artificial Intelligence</h3>
+    <p>Tools, use cases, and monetization.</p>
+  </div>
 
-    <!-- PHASE 1, TASK 5: Hidden sitemap link for crawlers -->
-    <a href="/sitemap.xml" style="display: none; position: absolute; left: -9999px;">Sitemap</a>
+  <div class="card">
+    <img src="/assets/crypto-icon.png" alt="Crypto">
+    <h3>Crypto & Blockchain</h3>
+    <p>Understand crypto without gambling.</p>
+  </div>
 
-    <!-- Your existing JavaScript -->
-    <script>
-        // Mobile menu toggle (existing)
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
+  <div class="card">
+    <img src="/assets/investing-icon.png" alt="Investing">
+    <h3>Investing</h3>
+    <p>Risk management and long-term growth.</p>
+  </div>
 
-        // Close mobile menu when clicking outside (existing)
-        document.addEventListener('click', function(event) {
-            const navLinks = document.getElementById('navLinks');
-            const mobileBtn = document.getElementById('mobileMenuBtn');
-            
-            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target) && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
+  <div class="card">
+    <img src="/assets/startup-icon.png" alt="Startup">
+    <h3>Startups</h3>
+    <p>Build and launch real businesses.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Follow Tech Wealth Guide</p>
+  <div class="social">
+    <a href="https://facebook.com/Techwealthguide" target="_blank">Facebook</a>
+    <a href="https://instagram.com/TechWealth.Official" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@techwealthguide" target="_blank">TikTok</a>
+  </div>
+  <p style="margin-top:20px;font-size:14px;">© 2024 Tech Wealth Guide</p>
+</footer>
+
 </body>
-</html>
+    </html>
